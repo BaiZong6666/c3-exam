@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test</title>
+</head>
+<body>
+<h1 id="test">Loading...</h1>
+<div id="qContainer"></div>
+<script>
+const Q = [{"type":"single","num":1,"question":"Test question","options":{"A":"opt A","B":"opt B","C":"opt C","D":"opt D"},"answer":"A"}];
+
+function init() {
+  document.getElementById('test').textContent = 'JS works! Questions: ' + Q.length;
+  let h = '';
+  Q.forEach((q,i) => {
+    h += '<div class="q-card" id="qc'+i+'">';
+    h += '<div class="q-head"><span class="qnum">'+q.num+'.</span>'+q.question+'</div>';
+    ['A','B','C','D'].forEach(k => {
+      h += '<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'">';
+      h += '<span class="letter">'+k+'</span>'+q.options[k]+'</div>';
+    });
+    h += '</div>';
+  });
+  document.getElementById('qContainer').innerHTML = h;
+  
+  document.getElementById('qContainer').addEventListener('click', function(e) {
+    const opt = e.target.closest('.opt');
+    if (opt) {
+      const i = parseInt(opt.dataset.i);
+      const k = opt.dataset.k;
+      alert('Clicked option ' + k + ' of question ' + (i+1));
+    }
+  });
+}
+
+init();
+</script>
+</body>
+</html>

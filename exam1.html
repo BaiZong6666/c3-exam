@@ -124,7 +124,7 @@ function renderAll(){
     keys.forEach(k=>{
       const v=q.type==='judge'?(k==='A'?'正确':'错误'):(q.options[k]||'');
       if(!v&&q.type!=='judge')return;
-      h+='<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'" onclick="tapOpt('+i+',&apos;'+k+'&apos;)">';
+      h+='<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'">';
       h+='<span class="letter">'+k+'</span>'+esc(v)+'</div>';
     });
     h+='<div class="feedback" id="fb'+i+'"></div>';

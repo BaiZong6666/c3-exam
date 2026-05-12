@@ -91,7 +91,24 @@ let correctCnt=0,wrongCnt=0;
 
 function init(){
   renderAll();
+  setupEvents();
   startTimer();
+}
+
+function setupEvents(){
+  document.getElementById('qContainer').addEventListener('click',function(e){
+    const opt=e.target.closest('.opt');
+    if(opt){
+      const i=parseInt(opt.dataset.i);
+      const k=opt.dataset.k;
+      tapOpt(i,k);
+    }
+    const btn=e.target.closest('.confirm-btn');
+    if(btn){
+      const i=parseInt(btn.dataset.mi);
+      confirmMulti(i);
+    }
+  });
 }
 
 function renderAll(){
@@ -107,11 +124,11 @@ function renderAll(){
     keys.forEach(k=>{
       const v=q.type==='judge'?(k==='A'?'正确':'错误'):(q.options[k]||'');
       if(!v&&q.type!=='judge')return;
-      h+='<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'" onclick="tapOpt('+i+',''+k+'')">';
+      h+='<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'" onclick="tapOpt('+i+',&apos;'+k+'&apos;)">';
       h+='<span class="letter">'+k+'</span>'+esc(v)+'</div>';
     });
     h+='<div class="feedback" id="fb'+i+'"></div>';
-    if(q.type==='multiple')h+='<div class="confirm-row" id="cr'+i+'"><button class="confirm-btn" onclick="confirmMulti('+i+')">确认答案</button></div>';
+    if(q.type==='multiple')h+='<div class="confirm-row" id="cr'+i+'"><button class="confirm-btn" data-mi="'+i+'">确认答案</button></div>';
     h+='</div>';
   });
   document.getElementById('qContainer').innerHTML=h;

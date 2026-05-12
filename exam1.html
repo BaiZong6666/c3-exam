@@ -275,7 +275,7 @@ function submitExam(){
   bs.textContent=ts+'分';  // 分
   bs.className='big-score '+(ts>=60?'pass':'fail');
   document.getElementById('rDetail').textContent='答对 '+cc+'/'+Q.length+' 题';  // 答对 x/n 题
-  document.getElementById('rBreakdown').textContent='单选'+sCorrect+'/60 博选'+mCorrect+'/10 判断'+jCorrect+'/20';  // 单选x/60 多选x/10 判断x/20
+  document.getElementById('rBreakdown').textContent='单选'+sCorrect+'/60 多选'+mCorrect+'/10 判断'+jCorrect+'/20';  // 单选x/60 多选x/10 判断x/20
   const tag=document.getElementById('rTag');
   if(ts>=60){tag.className='pass-tag yes';tag.textContent='✅ 恭喜通过！';}  // ✅ 恭喜通过！
   else{tag.className='pass-tag no';tag.textContent='❌ 未通过，继续加油！';}  // ❌ 未通过，继续加油！

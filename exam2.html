@@ -2,316 +2,292 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广东省C3类安全生产考核 · 模拟试卷(第二套)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>C3安全员考核 · 模拟试卷(第二套)</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background:#f5f7fa; color:#333; padding:12px; }
-.header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color:#fff; padding:20px; border-radius:12px; text-align:center; margin-bottom:16px; }
-.header h1 { font-size:20px; margin-bottom:4px; }
-.header p { font-size:14px; opacity:0.9; }
-.stats { display:flex; gap:12px; justify-content:center; margin-top:12px; flex-wrap:wrap; }
-.stat { background:rgba(255,255,255,0.15); padding:8px 16px; border-radius:8px; text-align:center; }
-.stat .num { font-size:22px; font-weight:bold; }
-.stat .label { font-size:12px; opacity:0.8; }
-.timer { background:#fff3cd; color:#856404; padding:8px 16px; border-radius:8px; text-align:center; font-size:18px; font-weight:bold; margin-bottom:16px; }
-.nav { background:#fff; padding:12px; border-radius:12px; margin-bottom:16px; }
-.nav h3 { font-size:14px; margin-bottom:8px; color:#666; }
-.nav-grid { display:grid; grid-template-columns:repeat(10,1fr); gap:4px; }
-.nav-btn { width:100%; aspect-ratio:1; border:1px solid #ddd; border-radius:6px; background:#fff; cursor:pointer; font-size:12px; transition:all 0.2s; }
-.nav-btn.answered { background:#e8f5e9; border-color:#4caf50; color:#2e7d32; }
-.nav-btn.current { background:#1a73e8; color:#fff; border-color:#1a73e8; }
-.nav-btn.correct { background:#4caf50; color:#fff; border-color:#4caf50; }
-.nav-btn.wrong { background:#f44336; color:#fff; border-color:#f44336; }
-.section-title { background:#e3f2fd; padding:10px 16px; border-radius:8px; margin:16px 0 8px; font-size:15px; font-weight:bold; color:#1565c0; }
-.question-card { background:#fff; padding:16px; border-radius:12px; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
-.question-card .q-text { font-size:15px; line-height:1.6; margin-bottom:12px; }
-.question-card .q-num { font-weight:bold; color:#1a73e8; margin-right:4px; }
-.option { padding:10px 14px; margin:6px 0; border:2px solid #e0e0e0; border-radius:8px; cursor:pointer; transition:all 0.2s; font-size:14px; }
-.option:hover { border-color:#1a73e8; background:#f8f9ff; }
-.option.selected { border-color:#1a73e8; background:#e3f2fd; font-weight:500; }
-.option.correct { border-color:#4caf50; background:#e8f5e9; }
-.option.wrong { border-color:#f44336; background:#fce4ec; }
-.option .opt-letter { display:inline-block; width:24px; height:24px; line-height:24px; text-align:center; border-radius:50%; background:#f0f0f0; margin-right:8px; font-weight:bold; font-size:13px; }
-.option.selected .opt-letter { background:#1a73e8; color:#fff; }
-.option.correct .opt-letter { background:#4caf50; color:#fff; }
-.option.wrong .opt-letter { background:#f44336; color:#fff; }
-.btn-row { display:flex; gap:10px; justify-content:center; margin:20px 0; flex-wrap:wrap; }
-.btn { padding:12px 28px; border:none; border-radius:8px; font-size:15px; cursor:pointer; font-weight:bold; transition:all 0.2s; }
-.btn-primary { background:#1a73e8; color:#fff; }
-.btn-primary:hover { background:#1557b0; }
-.btn-success { background:#4caf50; color:#fff; }
-.btn-success:hover { background:#388e3c; }
-.btn-warning { background:#ff9800; color:#fff; }
-.btn-warning:hover { background:#f57c00; }
-.btn:disabled { opacity:0.5; cursor:not-allowed; }
-.result { display:none; background:#fff; padding:20px; border-radius:12px; text-align:center; margin:20px 0; }
-.result.show { display:block; }
-.result .score { font-size:48px; font-weight:bold; margin:16px 0; }
-.result .score.pass { color:#4caf50; }
-.result .score.fail { color:#f44336; }
-.answer-info { margin-top:8px; padding:8px 12px; background:#f5f5f5; border-radius:6px; font-size:13px; color:#666; display:none; }
-.answer-info.show { display:block; }
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#333;padding:0;max-width:480px;margin:0 auto;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;padding:16px;text-align:center;position:sticky;top:0;z-index:100}
+.header h1{font-size:17px;margin-bottom:2px}
+.header .sub{font-size:12px;opacity:.85}
+.progress-bar{height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:8px}
+.progress-bar .fill{height:100%;background:#4caf50;border-radius:2px;transition:width .3s}
+.stats-row{display:flex;gap:8px;padding:8px 12px;background:#fff;margin-bottom:8px}
+.stats-row .s{flex:1;text-align:center;font-size:11px;color:#999}
+.stats-row .s b{display:block;font-size:18px;color:#333;margin-bottom:2px}
+.timer{color:#e65100;font-weight:bold}
+.section-title{background:#e3f2fd;padding:8px 12px;font-size:13px;font-weight:bold;color:#1565c0;position:sticky;top:64px;z-index:50}
+.q-card{background:#fff;margin:8px;border-radius:10px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.q-card .q-head{font-size:14px;line-height:1.7;margin-bottom:10px}
+.q-card .q-head .qnum{color:#1a73e8;font-weight:bold}
+.q-card .q-type-tag{font-size:11px;background:#f0f0f0;color:#999;padding:2px 6px;border-radius:3px;margin-left:6px}
+.opt{padding:10px 12px;margin:6px 0;border:2px solid #e8e8e8;border-radius:8px;font-size:14px;cursor:pointer;transition:all .15s;position:relative}
+.opt:active{transform:scale(.98)}
+.opt .letter{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:#f0f0f0;margin-right:8px;font-weight:bold;font-size:12px}
+.opt.sel{border-color:#1a73e8;background:#e8f0fe}
+.opt.sel .letter{background:#1a73e8;color:#fff}
+.opt.ok{border-color:#4caf50;background:#e8f5e9;cursor:default}
+.opt.ok .letter{background:#4caf50;color:#fff}
+.opt.err{border-color:#f44336;background:#fce4ec;cursor:default}
+.opt.err .letter{background:#f44336;color:#fff}
+.opt.dim{opacity:.5;cursor:default}
+.feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:13px;display:none}
+.feedback.show{display:flex;align-items:center;gap:6px}
+.feedback.fb-ok{background:#e8f5e9;color:#2e7d32}
+.feedback.fb-err{background:#fce4ec;color:#c62828}
+.confirm-row{margin-top:8px;display:none;text-align:right}
+.confirm-row.show{display:block}
+.confirm-btn{padding:6px 20px;border:none;border-radius:6px;background:#1a73e8;color:#fff;font-size:14px;cursor:pointer;font-weight:bold}
+.confirm-btn:active{background:#1557b0}
+.result-card{background:#fff;margin:16px 8px;border-radius:12px;padding:24px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.1);display:none}
+.result-card.show{display:block}
+.result-card .big-score{font-size:56px;font-weight:bold;margin:12px 0}
+.result-card .big-score.pass{color:#4caf50}
+.result-card .big-score.fail{color:#f44336}
+.result-card .detail{font-size:14px;color:#666;margin:4px 0}
+.result-card .pass-tag{display:inline-block;padding:4px 16px;border-radius:20px;font-size:14px;font-weight:bold;margin-top:12px}
+.result-card .pass-tag.yes{background:#e8f5e9;color:#2e7d32}
+.result-card .pass-tag.no{background:#fce4ec;color:#c62828}
+.bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid #e0e0e0;display:flex;gap:0;z-index:100}
+.bottom-bar button{flex:1;padding:14px 0;border:none;font-size:15px;font-weight:bold;cursor:pointer}
+.bottom-bar .b-reset{background:#fff;color:#666}
+.bottom-bar .b-submit{background:#1a73e8;color:#fff}
+.bottom-bar .b-submit:disabled{background:#ccc}
+.spacer{height:60px}
 </style>
 </head>
 <body>
 <div class="header">
-<h1>广东省C3类安全生产考核</h1>
-<p>模拟试卷(第二套) · 单选60题×1分 + 多选10题×2分 + 判断20题×1分 = 100分</p>
-<div class="stats">
-<div class="stat"><div class="num" id="totalNum">0</div><div class="label">总题数</div></div>
-<div class="stat"><div class="num" id="answeredNum">0</div><div class="label">已答题</div></div>
-<div class="stat"><div class="num" id="correctNum">-</div><div class="label">正确数</div></div>
+<h1>C3安全员考核 · 模拟试卷(第二套)</h1>
+<div class="sub">单选60×1分 + 多选10×2分 + 判断20×1分 = 100分</div>
+<div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
 </div>
+<div class="stats-row">
+<div class="s"><b id="answeredN">0</b>已答</div>
+<div class="s"><b id="correctN">0</b>正确</div>
+<div class="s"><b id="wrongN">0</b>错误</div>
+<div class="s"><b class="timer" id="timer">90:00</b>倒计时</div>
 </div>
-<div class="timer" id="timer">90:00</div>
-<div class="nav">
-<h3>答题卡</h3>
-<div class="nav-grid" id="navGrid"></div>
+<div id="qContainer"></div>
+<div class="result-card" id="resultCard">
+<div class="big-score" id="bigScore">0</div>
+<div class="detail" id="rDetail"></div>
+<div class="detail" id="rBreakdown"></div>
+<div class="pass-tag" id="rTag"></div>
 </div>
-<div id="questionsContainer"></div>
-<div class="btn-row">
-<button class="btn btn-warning" onclick="showAllAnswers()">显示答案</button>
-<button class="btn btn-primary" onclick="submitExam()">交卷</button>
-<button class="btn btn-success" onclick="resetExam()">重新开始</button>
-</div>
-<div class="result" id="result">
-<h2>考试结果</h2>
-<div class="score" id="scoreDisplay">0</div>
-<p id="scoreDetail"></p>
-<p id="passStatus"></p>
+<div class="spacer"></div>
+<div class="bottom-bar">
+<button class="b-reset" onclick="resetExam()">重新开始</button>
+<button class="b-submit" id="submitBtn" onclick="submitExam()">交卷</button>
 </div>
 <script>
-const QUESTIONS = [{"type": "single", "num": 1, "question": "建筑起重机械安装完毕后，安装单位应当向（）进行安全使用说明。", "options": {"A": "使用单位", "B": "建设单位", "C": "监理单位", "D": "生产单位"}, "answer": "A"}, {"type": "single", "num": 2, "question": "出租单位在建筑起重机械（）前，应当办理备案。", "options": {"A": "首次出租", "B": "每次出租", "C": "安装", "D": "拆卸"}, "answer": "A"}, {"type": "single", "num": 3, "question": "对违法行为给予行政处罚的规定必须（），未经公布不得作为依据。", "options": {"A": "公开", "B": "公布", "C": "保密", "D": "告知"}, "answer": "B"}, {"type": "single", "num": 4, "question": "军事建设工程的安全生产管理，按照（）的规定执行。", "options": {"A": "国务院", "B": "中央军事委员会", "C": "住建部", "D": "地方政府"}, "answer": "B"}, {"type": "single", "num": 5, "question": "作业人员应当（）安全防护用具、机械设备。", "options": {"A": "正确使用", "B": "随意使用", "C": "违规使用", "D": "借用使用"}, "answer": "A"}, {"type": "single", "num": 6, "question": "对事故违法行为，任何单位和个人有权向（）举报。", "options": {"A": "安全生产监督管理部门", "B": "工会", "C": "政府", "D": "法院"}, "answer": "A"}, {"type": "single", "num": 7, "question": "国家建立（）天气监测预警体系。", "options": {"A": "重污染", "B": "轻度污染", "C": "中度污染", "D": "一般污染"}, "answer": "A"}, {"type": "single", "num": 8, "question": "安全生产约谈中，国务院安委会主任可约谈（）。", "options": {"A": "地方人民政府负责人", "B": "企业安全负责人", "C": "项目经理", "D": "安全员"}, "answer": "A"}, {"type": "single", "num": 9, "question": "企业取得安全生产许可证，职业危害防治措施中属于职业病的是（）。", "options": {"A": "肺结核", "B": "尘肺", "C": "感冒", "D": "乙肝"}, "answer": "B"}, {"type": "single", "num": 10, "question": "安全生产许可证颁发管理机关应在收到申请之日起（）日内审查完毕。", "options": {"A": "15", "B": "20", "C": "30", "D": "45"}, "answer": "D"}, {"type": "single", "num": 11, "question": "高温天气作业是指在高温（）下的作业。", "options": {"A": "室内环境", "B": "自然气象环境", "C": "工作场所", "D": "室外环境"}, "answer": "B"}, {"type": "single", "num": 12, "question": "法人组织违法造成损害的，应当承担（）。", "options": {"A": "民事责任", "B": "行政责任", "C": "刑事责任", "D": "违法责任"}, "answer": "A"}, {"type": "single", "num": 13, "question": "发生一般事故，对生产经营单位处（）罚款。", "options": {"A": "30万-100万", "B": "20万-50万", "C": "10万-30万", "D": "5万-10万"}, "answer": "A"}, {"type": "single", "num": 14, "question": "发生特别重大事故，由国务院安委会约谈（）主要负责人。", "options": {"A": "省级人民政府", "B": "市级政府", "C": "县级政府", "D": "企业"}, "answer": "A"}, {"type": "single", "num": 15, "question": "地方性法规不得设定（）的行政处罚。", "options": {"A": "吊销营业执照", "B": "罚款", "C": "警告", "D": "责令停业"}, "answer": "A"}, {"type": "single", "num": 16, "question": "从业人员发现危及人身安全情况时，有权（）。", "options": {"A": "停止作业并撤离", "B": "继续作业", "C": "观望等待", "D": "报告后等待"}, "answer": "A"}, {"type": "single", "num": 17, "question": "重大事故报告后，逐级上报至（）安全生产监管部门。", "options": {"A": "国务院", "B": "省级", "C": "市级", "D": "县级"}, "answer": "A"}, {"type": "single", "num": 18, "question": "安全生产工作把保护（）摆在首位。", "options": {"A": "人民生命安全", "B": "生产安全", "C": "财产安全", "D": "设备安全"}, "answer": "A"}, {"type": "single", "num": 19, "question": "管行业必须管安全、管业务必须管安全、管（）必须管安全。", "options": {"A": "生产经营", "B": "财务", "C": "行政", "D": "政务"}, "answer": "A"}, {"type": "single", "num": 20, "question": "《生产安全事故报告和调查处理条例》自 2007 年（）起施行。", "options": {"A": "6 月 1 日", "B": "9 月 1 日", "C": "10 月 1 日", "D": "12 月 1 日"}, "answer": "A"}, {"type": "single", "num": 21, "question": "专职安全员发现安全隐患，应及时向（）报告。", "options": {"A": "项目负责人和安全生产管理机构", "B": "建设单位", "C": "监理单位", "D": "政府部门"}, "answer": "A"}, {"type": "single", "num": 22, "question": "国务院加强事中事后监管，推行（）监管方式。", "options": {"A": "双随机、一公开", "B": "单随机、双公开", "C": "全覆盖", "D": "重点抽查"}, "answer": "A"}, {"type": "single", "num": 23, "question": "工伤保险费由（）缴纳。", "options": {"A": "用人单位", "B": "职工个人", "C": "双方共同", "D": "政府"}, "answer": "A"}, {"type": "single", "num": 24, "question": "用人单位实行承包经营，工伤保险责任由（）承担。", "options": {"A": "职工劳动关系所在单位", "B": "承包单位", "C": "发包单位", "D": "第三方"}, "answer": "A"}, {"type": "single", "num": 25, "question": "“安管人员” 隐瞒情况申请考核，（）内不得再次申请。", "options": {"A": "半年", "B": "1 年", "C": "2 年", "D": "3 年"}, "answer": "B"}, {"type": "single", "num": 26, "question": "高温天气作业健康检查费用由（）承担。", "options": {"A": "用人单位", "B": "个人", "C": "政府", "D": "工会"}, "answer": "A"}, {"type": "single", "num": 27, "question": "自事故发生之日起（）日内，伤亡人数变化的应补报。", "options": {"A": "7", "B": "15", "C": "30", "D": "60"}, "answer": "C"}, {"type": "single", "num": 28, "question": "道路交通事故自发生之日起（）日内，伤亡变化应补报。", "options": {"A": "3", "B": "7", "C": "15", "D": "30"}, "answer": "B"}, {"type": "single", "num": 29, "question": "暂扣安全生产许可证的处罚，期限为（）日。", "options": {"A": "15-30", "B": "30-60", "C": "60-90", "D": "90-120"}, "answer": "B"}, {"type": "single", "num": 30, "question": "设计单位应当按照（）进行设计，防止安全事故。", "options": {"A": "强制性标准", "B": "企业标准", "C": "地方标准", "D": "行业标准"}, "answer": "A"}, {"type": "single", "num": 31, "question": "安全生产考核合格证书延续，有效期延续（）年。", "options": {"A": "1", "B": "3", "C": "5", "D": "7"}, "answer": "B"}, {"type": "single", "num": 32, "question": "重大事故是指造成（）人以上 30 人以下死亡的事故。", "options": {"A": "3", "B": "5", "C": "10", "D": "15"}, "answer": "C"}, {"type": "single", "num": 33, "question": "安全生产方针是（）。", "options": {"A": "安全第一、预防为主、综合治理", "B": "安全第一、质量第一", "C": "预防为主、防治结合", "D": "安全发展"}, "answer": "A"}, {"type": "single", "num": 34, "question": "安全生产工作坚持（）的领导。", "options": {"A": "中国共产党", "B": "国务院", "C": "应急管理部", "D": "住建部"}, "answer": "A"}, {"type": "single", "num": 35, "question": "危大工程是指房屋建筑和市政工程（）中易导致群死群伤的分部分项工程。", "options": {"A": "施工过程", "B": "设计过程", "C": "监理过程", "D": "验收过程"}, "answer": "A"}, {"type": "single", "num": 36, "question": "事故调查报告应当附具（），调查组成员签名。", "options": {"A": "有关证据材料", "B": "处罚建议", "C": "整改方案", "D": "责任认定"}, "answer": "A"}, {"type": "single", "num": 37, "question": "施工单位应当在施工组织设计中编制安全技术措施和（）方案。", "options": {"A": "临时用电", "B": "消防", "C": "应急", "D": "防汛"}, "answer": "A"}, {"type": "single", "num": 38, "question": "施工单位采购的安全防护用具，应当（）管理。", "options": {"A": "专人", "B": "兼职", "C": "班组", "D": "个人"}, "answer": "A"}, {"type": "single", "num": 39, "question": "建设单位应当将拆除工程发包给（）的施工单位。", "options": {"A": "具有相应资质等级", "B": "有经验", "C": "有人员", "D": "有设备"}, "answer": "A"}, {"type": "single", "num": 40, "question": "国家对严重危及施工安全的工艺、设备、材料实行（）制度。", "options": {"A": "淘汰", "B": "限制", "C": "改造", "D": "维修"}, "answer": "A"}, {"type": "single", "num": 41, "question": "工程监理单位对建设工程安全生产承担（）责任。", "options": {"A": "监理", "B": "全部", "C": "主要", "D": "连带"}, "answer": "A"}, {"type": "single", "num": 42, "question": "分包单位不服从管理导致事故的，由（）承担主要责任。", "options": {"A": "分包单位", "B": "总包单位", "C": "建设单位", "D": "监理单位"}, "answer": "A"}, {"type": "single", "num": 43, "question": "出租单位出租机械设备，应当出具（）。", "options": {"A": "检测合格证明", "B": "生产许可证", "C": "合格证", "D": "备案证明"}, "answer": "A"}, {"type": "single", "num": 44, "question": "检验检测机构对合格的施工起重机械，出具（）证明。", "options": {"A": "安全合格", "B": "产品合格", "C": "质量合格", "D": "检验合格"}, "answer": "A"}, {"type": "single", "num": 45, "question": "在建工程中止施工，建设单位应当在（）个月内报告发证机关。", "options": {"A": "1", "B": "2", "C": "3", "D": "6"}, "answer": "A"}, {"type": "single", "num": 46, "question": "特种设备出厂时，未随附技术资料的，责令改正，逾期处（）罚款。", "options": {"A": "2 万 -20万", "B": "5 万 -50 万", "C": "10 万 -50 万", "D": "1 万 -10 万"}, "answer": "A"}, {"type": "single", "num": 47, "question": "特种设备出租期间，使用管理和维保义务由（）承担。", "options": {"A": "出租单位", "B": "使用单位", "C": "安装单位", "D": "监理单位"}, "answer": "A"}, {"type": "single", "num": 48, "question": "电梯制造单位发现严重隐患，未及时告知的，处（）罚款。", "options": {"A": "1 万 -10 万", "B": "2万 -20 万", "C": "5 万 -50 万", "D": "10 万 -50 万"}, "answer": "A"}, {"type": "single", "num": 49, "question": "建筑施工单位（）建立应急救援组织。", "options": {"A": "应当", "B": "可以", "C": "无需", "D": "自愿"}, "answer": "A"}, {"type": "single", "num": 50, "question": "承包建筑工程的单位应当在（）许可范围内承揽工程。", "options": {"A": "资质等级", "B": "注册地域", "C": "专业特长", "D": "备案范围"}, "answer": "A"}, {"type": "single", "num": 51, "question": "《广东省安全生产条例》规定，安全生产工作应当（）。", "options": {"A": "以人为本", "B": "效益优先", "C": "进度优先", "D": "质量优先"}, "answer": "A"}, {"type": "single", "num": 52, "question": "生产经营单位对（）应当登记建档。", "options": {"A": "重大危险源", "B": "一般隐患", "C": "设备", "D": "人员"}, "answer": "A"}, {"type": "single", "num": 53, "question": "不得安排未成年工从事第（）级体力劳动强度的劳动。", "options": {"A": "一", "B": "二", "C": "三", "D": "四"}, "answer": "D"}, {"type": "single", "num": 54, "question": "建筑法规定的吊销资质证书，由（）决定。", "options": {"A": "颁发资质证书的机关", "B": "工商部门", "C": "住建部门", "D": "政府"}, "answer": "A"}, {"type": "single", "num": 55, "question": "企业主要负责人未履行职责，构成犯罪的，（）内不得担任生产经营单位负责人。", "options": {"A": "3 年", "B": "5 年", "C": "10 年", "D": "终身"}, "answer": "B"}, {"type": "single", "num": 56, "question": "安全监督管理部门对事故整改情况进行（）。", "options": {"A": "监督检查", "B": "备案", "C": "审批", "D": "公示"}, "answer": "A"}, {"type": "single", "num": 57, "question": "事故发生地（）公安机关对涉嫌犯罪的立案侦查。", "options": {"A": "当地", "B": "上级", "C": "企业注册地", "D": "项目所在地"}, "answer": "A"}, {"type": "single", "num": 58, "question": "地方政府规章罚款限额由省级（）规定。", "options": {"A": "人大常委会", "B": "政府", "C": "住建厅", "D": "应急厅"}, "answer": "A"}, {"type": "single", "num": 59, "question": "中央管理建筑施工企业，安全生产许可证由（）颁发。", "options": {"A": "国务院建设主管部门", "B": "省级住建部门", "C": "市级住建部门", "D": "县级住建部门"}, "answer": "A"}, {"type": "single", "num": 60, "question": "建筑施工企业（）转让、出借资质证书。", "options": {"A": "禁止", "B": "可以", "C": "经批准可以", "D": "协商可以"}, "answer": "A"}, {"type": "multiple", "num": 1, "question": "建筑起重机械安装单位的职责有", "options": {"A": "编制拆装方案", "B": "现场监督", "C": "出具自检证明", "D": "办理使用登记"}, "answer": "ABC"}, {"type": "multiple", "num": 2, "question": "建设单位的安全责任包括", "options": {"A": "提供安全施工措施费用", "B": "不得压缩工期", "C": "拆除工程备案", "D": "落实安全防护"}, "answer": "ABC"}, {"type": "multiple", "num": 3, "question": "安全生产 “三同时” 是指安全设施与主体工程", "options": {"A": "同时设计", "B": "同时施工", "C": "同时投入使用", "D": "同时验收"}, "answer": "ABC"}, {"type": "multiple", "num": 4, "question": "施工现场文明施工要求包括", "options": {"A": "围挡封闭", "B": "场地硬化", "C": "扬尘治理", "D": "垃圾分类"}, "answer": "ABCD"}, {"type": "multiple", "num": 5, "question": "属于重大事故隐患的有", "options": {"A": "未取得安全生产许可证施工", "B": "特种作业人员无证上岗", "C": "危大工程未编制方案", "D": "现场材料堆放混乱"}, "answer": "ABC"}, {"type": "multiple", "num": 6, "question": "应急救援预案演练的方式有", "options": {"A": "现场演练", "B": "室内演练", "C": "单项演练", "D": "综合演练"}, "answer": "ABCD"}, {"type": "multiple", "num": 7, "question": "劳动防护用品包括", "options": {"A": "安全帽", "B": "安全带", "C": "安全鞋", "D": "工作服"}, "answer": "ABCD"}, {"type": "multiple", "num": 8, "question": "建筑施工企业安全管理制度包括", "options": {"A": "安全生产责任制", "B": "安全教育培训制度", "C": "安全检查制度", "D": "隐患排查制度"}, "answer": "ABCD"}, {"type": "multiple", "num": 9, "question": "事故调查处理 “四不放过” 包括", "options": {"A": "原因未查清不放过", "B": "责任人未处理不放过", "C": "群众未教育不放过", "D": "隐患未整改不放过"}, "answer": "ABCD"}, {"type": "multiple", "num": 10, "question": "施工现场临时用电要求有", "options": {"A": "一机一闸一漏一箱", "B": "保护接零", "C": "防雷接地", "D": "电工持证上岗"}, "answer": "ABCD"}, {"type": "judge", "num": 1, "question": "建筑起重机械使用单位应当组织验收。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 2, "question": "行政处罚规定未经公布可以作为处罚依据。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 3, "question": "作业人员必须正确使用安全防护用具。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 4, "question": "安全生产许可证可以转让。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 5, "question": "高温天气作业人员健康检查费用由个人承担。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 6, "question": "事故报告可以迟报、漏报。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 7, "question": "监理单位对施工现场安全承担监理责任。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 8, "question": "施工单位可以转包主体结构工程。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 9, "question": "特种设备使用单位应当建立安全技术档案。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 10, "question": "吊篮作业人员必须系挂安全带。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 11, "question": "专职安全员有权制止违章指挥、违章操作。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 12, "question": "施工现场宿舍可以睡通铺。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 13, "question": "广东省安全生产条例要求企业落实风险分级管控。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 14, "question": "未成年工可以从事矿山井下作业。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 15, "question": "建筑施工企业必须为职工缴纳工伤保险。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 16, "question": "危大工程验收不合格不得进入下道工序。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 17, "question": "消防救援机构负责消防安全监督检查。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 18, "question": "安全生产考核不合格可以上岗。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 19, "question": "施工现场可以使用淘汰的工艺设备。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 20, "question": "事故调查组有权向有关单位了解情况。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}];
-const SCORE_MAP = {single:1, multiple:2, judge:1};
-let userAnswers = {};
-let submitted = false;
-let timerSeconds = 90 * 60;
-let timerInterval = null;
+const Q=[{"type": "single", "num": 1, "question": "建筑起重机械安装完毕后，安装单位应当向（）进行安全使用说明。", "options": {"A": "使用单位", "B": "建设单位", "C": "监理单位", "D": "生产单位"}, "answer": "A"}, {"type": "single", "num": 2, "question": "出租单位在建筑起重机械（）前，应当办理备案。", "options": {"A": "首次出租", "B": "每次出租", "C": "安装", "D": "拆卸"}, "answer": "A"}, {"type": "single", "num": 3, "question": "对违法行为给予行政处罚的规定必须（），未经公布不得作为依据。", "options": {"A": "公开", "B": "公布", "C": "保密", "D": "告知"}, "answer": "B"}, {"type": "single", "num": 4, "question": "军事建设工程的安全生产管理，按照（）的规定执行。", "options": {"A": "国务院", "B": "中央军事委员会", "C": "住建部", "D": "地方政府"}, "answer": "B"}, {"type": "single", "num": 5, "question": "作业人员应当（）安全防护用具、机械设备。", "options": {"A": "正确使用", "B": "随意使用", "C": "违规使用", "D": "借用使用"}, "answer": "A"}, {"type": "single", "num": 6, "question": "对事故违法行为，任何单位和个人有权向（）举报。", "options": {"A": "安全生产监督管理部门", "B": "工会", "C": "政府", "D": "法院"}, "answer": "A"}, {"type": "single", "num": 7, "question": "国家建立（）天气监测预警体系。", "options": {"A": "重污染", "B": "轻度污染", "C": "中度污染", "D": "一般污染"}, "answer": "A"}, {"type": "single", "num": 8, "question": "安全生产约谈中，国务院安委会主任可约谈（）。", "options": {"A": "地方人民政府负责人", "B": "企业安全负责人", "C": "项目经理", "D": "安全员"}, "answer": "A"}, {"type": "single", "num": 9, "question": "企业取得安全生产许可证，职业危害防治措施中属于职业病的是（）。", "options": {"A": "肺结核", "B": "尘肺", "C": "感冒", "D": "乙肝"}, "answer": "B"}, {"type": "single", "num": 10, "question": "安全生产许可证颁发管理机关应在收到申请之日起（）日内审查完毕。", "options": {"A": "15", "B": "20", "C": "30", "D": "45"}, "answer": "D"}, {"type": "single", "num": 11, "question": "高温天气作业是指在高温（）下的作业。", "options": {"A": "室内环境", "B": "自然气象环境", "C": "工作场所", "D": "室外环境"}, "answer": "B"}, {"type": "single", "num": 12, "question": "法人组织违法造成损害的，应当承担（）。", "options": {"A": "民事责任", "B": "行政责任", "C": "刑事责任", "D": "违法责任"}, "answer": "A"}, {"type": "single", "num": 13, "question": "发生一般事故，对生产经营单位处（）罚款。", "options": {"A": "30万-100万", "B": "20万-50万", "C": "10万-30万", "D": "5万-10万"}, "answer": "A"}, {"type": "single", "num": 14, "question": "发生特别重大事故，由国务院安委会约谈（）主要负责人。", "options": {"A": "省级人民政府", "B": "市级政府", "C": "县级政府", "D": "企业"}, "answer": "A"}, {"type": "single", "num": 15, "question": "地方性法规不得设定（）的行政处罚。", "options": {"A": "吊销营业执照", "B": "罚款", "C": "警告", "D": "责令停业"}, "answer": "A"}, {"type": "single", "num": 16, "question": "从业人员发现危及人身安全情况时，有权（）。", "options": {"A": "停止作业并撤离", "B": "继续作业", "C": "观望等待", "D": "报告后等待"}, "answer": "A"}, {"type": "single", "num": 17, "question": "重大事故报告后，逐级上报至（）安全生产监管部门。", "options": {"A": "国务院", "B": "省级", "C": "市级", "D": "县级"}, "answer": "A"}, {"type": "single", "num": 18, "question": "安全生产工作把保护（）摆在首位。", "options": {"A": "人民生命安全", "B": "生产安全", "C": "财产安全", "D": "设备安全"}, "answer": "A"}, {"type": "single", "num": 19, "question": "管行业必须管安全、管业务必须管安全、管（）必须管安全。", "options": {"A": "生产经营", "B": "财务", "C": "行政", "D": "政务"}, "answer": "A"}, {"type": "single", "num": 20, "question": "《生产安全事故报告和调查处理条例》自 2007 年（）起施行。", "options": {"A": "6 月 1 日", "B": "9 月 1 日", "C": "10 月 1 日", "D": "12 月 1 日"}, "answer": "A"}, {"type": "single", "num": 21, "question": "专职安全员发现安全隐患，应及时向（）报告。", "options": {"A": "项目负责人和安全生产管理机构", "B": "建设单位", "C": "监理单位", "D": "政府部门"}, "answer": "A"}, {"type": "single", "num": 22, "question": "国务院加强事中事后监管，推行（）监管方式。", "options": {"A": "双随机、一公开", "B": "单随机、双公开", "C": "全覆盖", "D": "重点抽查"}, "answer": "A"}, {"type": "single", "num": 23, "question": "工伤保险费由（）缴纳。", "options": {"A": "用人单位", "B": "职工个人", "C": "双方共同", "D": "政府"}, "answer": "A"}, {"type": "single", "num": 24, "question": "用人单位实行承包经营，工伤保险责任由（）承担。", "options": {"A": "职工劳动关系所在单位", "B": "承包单位", "C": "发包单位", "D": "第三方"}, "answer": "A"}, {"type": "single", "num": 25, "question": "“安管人员” 隐瞒情况申请考核，（）内不得再次申请。", "options": {"A": "半年", "B": "1 年", "C": "2 年", "D": "3 年"}, "answer": "B"}, {"type": "single", "num": 26, "question": "高温天气作业健康检查费用由（）承担。", "options": {"A": "用人单位", "B": "个人", "C": "政府", "D": "工会"}, "answer": "A"}, {"type": "single", "num": 27, "question": "自事故发生之日起（）日内，伤亡人数变化的应补报。", "options": {"A": "7", "B": "15", "C": "30", "D": "60"}, "answer": "C"}, {"type": "single", "num": 28, "question": "道路交通事故自发生之日起（）日内，伤亡变化应补报。", "options": {"A": "3", "B": "7", "C": "15", "D": "30"}, "answer": "B"}, {"type": "single", "num": 29, "question": "暂扣安全生产许可证的处罚，期限为（）日。", "options": {"A": "15-30", "B": "30-60", "C": "60-90", "D": "90-120"}, "answer": "B"}, {"type": "single", "num": 30, "question": "设计单位应当按照（）进行设计，防止安全事故。", "options": {"A": "强制性标准", "B": "企业标准", "C": "地方标准", "D": "行业标准"}, "answer": "A"}, {"type": "single", "num": 31, "question": "安全生产考核合格证书延续，有效期延续（）年。", "options": {"A": "1", "B": "3", "C": "5", "D": "7"}, "answer": "B"}, {"type": "single", "num": 32, "question": "重大事故是指造成（）人以上 30 人以下死亡的事故。", "options": {"A": "3", "B": "5", "C": "10", "D": "15"}, "answer": "C"}, {"type": "single", "num": 33, "question": "安全生产方针是（）。", "options": {"A": "安全第一、预防为主、综合治理", "B": "安全第一、质量第一", "C": "预防为主、防治结合", "D": "安全发展"}, "answer": "A"}, {"type": "single", "num": 34, "question": "安全生产工作坚持（）的领导。", "options": {"A": "中国共产党", "B": "国务院", "C": "应急管理部", "D": "住建部"}, "answer": "A"}, {"type": "single", "num": 35, "question": "危大工程是指房屋建筑和市政工程（）中易导致群死群伤的分部分项工程。", "options": {"A": "施工过程", "B": "设计过程", "C": "监理过程", "D": "验收过程"}, "answer": "A"}, {"type": "single", "num": 36, "question": "事故调查报告应当附具（），调查组成员签名。", "options": {"A": "有关证据材料", "B": "处罚建议", "C": "整改方案", "D": "责任认定"}, "answer": "A"}, {"type": "single", "num": 37, "question": "施工单位应当在施工组织设计中编制安全技术措施和（）方案。", "options": {"A": "临时用电", "B": "消防", "C": "应急", "D": "防汛"}, "answer": "A"}, {"type": "single", "num": 38, "question": "施工单位采购的安全防护用具，应当（）管理。", "options": {"A": "专人", "B": "兼职", "C": "班组", "D": "个人"}, "answer": "A"}, {"type": "single", "num": 39, "question": "建设单位应当将拆除工程发包给（）的施工单位。", "options": {"A": "具有相应资质等级", "B": "有经验", "C": "有人员", "D": "有设备"}, "answer": "A"}, {"type": "single", "num": 40, "question": "国家对严重危及施工安全的工艺、设备、材料实行（）制度。", "options": {"A": "淘汰", "B": "限制", "C": "改造", "D": "维修"}, "answer": "A"}, {"type": "single", "num": 41, "question": "工程监理单位对建设工程安全生产承担（）责任。", "options": {"A": "监理", "B": "全部", "C": "主要", "D": "连带"}, "answer": "A"}, {"type": "single", "num": 42, "question": "分包单位不服从管理导致事故的，由（）承担主要责任。", "options": {"A": "分包单位", "B": "总包单位", "C": "建设单位", "D": "监理单位"}, "answer": "A"}, {"type": "single", "num": 43, "question": "出租单位出租机械设备，应当出具（）。", "options": {"A": "检测合格证明", "B": "生产许可证", "C": "合格证", "D": "备案证明"}, "answer": "A"}, {"type": "single", "num": 44, "question": "检验检测机构对合格的施工起重机械，出具（）证明。", "options": {"A": "安全合格", "B": "产品合格", "C": "质量合格", "D": "检验合格"}, "answer": "A"}, {"type": "single", "num": 45, "question": "在建工程中止施工，建设单位应当在（）个月内报告发证机关。", "options": {"A": "1", "B": "2", "C": "3", "D": "6"}, "answer": "A"}, {"type": "single", "num": 46, "question": "特种设备出厂时，未随附技术资料的，责令改正，逾期处（）罚款。", "options": {"A": "2 万 -20万", "B": "5 万 -50 万", "C": "10 万 -50 万", "D": "1 万 -10 万"}, "answer": "A"}, {"type": "single", "num": 47, "question": "特种设备出租期间，使用管理和维保义务由（）承担。", "options": {"A": "出租单位", "B": "使用单位", "C": "安装单位", "D": "监理单位"}, "answer": "A"}, {"type": "single", "num": 48, "question": "电梯制造单位发现严重隐患，未及时告知的，处（）罚款。", "options": {"A": "1 万 -10 万", "B": "2万 -20 万", "C": "5 万 -50 万", "D": "10 万 -50 万"}, "answer": "A"}, {"type": "single", "num": 49, "question": "建筑施工单位（）建立应急救援组织。", "options": {"A": "应当", "B": "可以", "C": "无需", "D": "自愿"}, "answer": "A"}, {"type": "single", "num": 50, "question": "承包建筑工程的单位应当在（）许可范围内承揽工程。", "options": {"A": "资质等级", "B": "注册地域", "C": "专业特长", "D": "备案范围"}, "answer": "A"}, {"type": "single", "num": 51, "question": "《广东省安全生产条例》规定，安全生产工作应当（）。", "options": {"A": "以人为本", "B": "效益优先", "C": "进度优先", "D": "质量优先"}, "answer": "A"}, {"type": "single", "num": 52, "question": "生产经营单位对（）应当登记建档。", "options": {"A": "重大危险源", "B": "一般隐患", "C": "设备", "D": "人员"}, "answer": "A"}, {"type": "single", "num": 53, "question": "不得安排未成年工从事第（）级体力劳动强度的劳动。", "options": {"A": "一", "B": "二", "C": "三", "D": "四"}, "answer": "D"}, {"type": "single", "num": 54, "question": "建筑法规定的吊销资质证书，由（）决定。", "options": {"A": "颁发资质证书的机关", "B": "工商部门", "C": "住建部门", "D": "政府"}, "answer": "A"}, {"type": "single", "num": 55, "question": "企业主要负责人未履行职责，构成犯罪的，（）内不得担任生产经营单位负责人。", "options": {"A": "3 年", "B": "5 年", "C": "10 年", "D": "终身"}, "answer": "B"}, {"type": "single", "num": 56, "question": "安全监督管理部门对事故整改情况进行（）。", "options": {"A": "监督检查", "B": "备案", "C": "审批", "D": "公示"}, "answer": "A"}, {"type": "single", "num": 57, "question": "事故发生地（）公安机关对涉嫌犯罪的立案侦查。", "options": {"A": "当地", "B": "上级", "C": "企业注册地", "D": "项目所在地"}, "answer": "A"}, {"type": "single", "num": 58, "question": "地方政府规章罚款限额由省级（）规定。", "options": {"A": "人大常委会", "B": "政府", "C": "住建厅", "D": "应急厅"}, "answer": "A"}, {"type": "single", "num": 59, "question": "中央管理建筑施工企业，安全生产许可证由（）颁发。", "options": {"A": "国务院建设主管部门", "B": "省级住建部门", "C": "市级住建部门", "D": "县级住建部门"}, "answer": "A"}, {"type": "single", "num": 60, "question": "建筑施工企业（）转让、出借资质证书。", "options": {"A": "禁止", "B": "可以", "C": "经批准可以", "D": "协商可以"}, "answer": "A"}, {"type": "multiple", "num": 1, "question": "建筑起重机械安装单位的职责有", "options": {"A": "编制拆装方案", "B": "现场监督", "C": "出具自检证明", "D": "办理使用登记"}, "answer": "ABC"}, {"type": "multiple", "num": 2, "question": "建设单位的安全责任包括", "options": {"A": "提供安全施工措施费用", "B": "不得压缩工期", "C": "拆除工程备案", "D": "落实安全防护"}, "answer": "ABC"}, {"type": "multiple", "num": 3, "question": "安全生产 “三同时” 是指安全设施与主体工程", "options": {"A": "同时设计", "B": "同时施工", "C": "同时投入使用", "D": "同时验收"}, "answer": "ABC"}, {"type": "multiple", "num": 4, "question": "施工现场文明施工要求包括", "options": {"A": "围挡封闭", "B": "场地硬化", "C": "扬尘治理", "D": "垃圾分类"}, "answer": "ABCD"}, {"type": "multiple", "num": 5, "question": "属于重大事故隐患的有", "options": {"A": "未取得安全生产许可证施工", "B": "特种作业人员无证上岗", "C": "危大工程未编制方案", "D": "现场材料堆放混乱"}, "answer": "ABC"}, {"type": "multiple", "num": 6, "question": "应急救援预案演练的方式有", "options": {"A": "现场演练", "B": "室内演练", "C": "单项演练", "D": "综合演练"}, "answer": "ABCD"}, {"type": "multiple", "num": 7, "question": "劳动防护用品包括", "options": {"A": "安全帽", "B": "安全带", "C": "安全鞋", "D": "工作服"}, "answer": "ABCD"}, {"type": "multiple", "num": 8, "question": "建筑施工企业安全管理制度包括", "options": {"A": "安全生产责任制", "B": "安全教育培训制度", "C": "安全检查制度", "D": "隐患排查制度"}, "answer": "ABCD"}, {"type": "multiple", "num": 9, "question": "事故调查处理 “四不放过” 包括", "options": {"A": "原因未查清不放过", "B": "责任人未处理不放过", "C": "群众未教育不放过", "D": "隐患未整改不放过"}, "answer": "ABCD"}, {"type": "multiple", "num": 10, "question": "施工现场临时用电要求有", "options": {"A": "一机一闸一漏一箱", "B": "保护接零", "C": "防雷接地", "D": "电工持证上岗"}, "answer": "ABCD"}, {"type": "judge", "num": 1, "question": "建筑起重机械使用单位应当组织验收。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 2, "question": "行政处罚规定未经公布可以作为处罚依据。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 3, "question": "作业人员必须正确使用安全防护用具。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 4, "question": "安全生产许可证可以转让。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 5, "question": "高温天气作业人员健康检查费用由个人承担。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 6, "question": "事故报告可以迟报、漏报。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 7, "question": "监理单位对施工现场安全承担监理责任。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 8, "question": "施工单位可以转包主体结构工程。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 9, "question": "特种设备使用单位应当建立安全技术档案。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 10, "question": "吊篮作业人员必须系挂安全带。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 11, "question": "专职安全员有权制止违章指挥、违章操作。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 12, "question": "施工现场宿舍可以睡通铺。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 13, "question": "广东省安全生产条例要求企业落实风险分级管控。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 14, "question": "未成年工可以从事矿山井下作业。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 15, "question": "建筑施工企业必须为职工缴纳工伤保险。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 16, "question": "危大工程验收不合格不得进入下道工序。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 17, "question": "消防救援机构负责消防安全监督检查。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}, {"type": "judge", "num": 18, "question": "安全生产考核不合格可以上岗。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 19, "question": "施工现场可以使用淘汰的工艺设备。", "options": {"A": "正确", "B": "错误"}, "answer": "错误"}, {"type": "judge", "num": 20, "question": "事故调查组有权向有关单位了解情况。", "options": {"A": "正确", "B": "错误"}, "answer": "正确"}];
+const SM={single:1,multiple:2,judge:1};
+let UA={}; // idx -> answer (string or array)
+let confirmed={}; // idx -> bool (feedback shown)
+let submitted=false;
+let sec=90*60,ti=null;
+let correctCnt=0,wrongCnt=0;
 
-function init() {
-    document.getElementById('totalNum').textContent = QUESTIONS.length;
-    renderQuestions();
-    renderNav();
-    startTimer();
+function init(){
+  renderAll();
+  startTimer();
 }
 
-function renderQuestions() {
-    const container = document.getElementById('questionsContainer');
-    let html = '';
-    let lastType = '';
-    const typeNames = {single:'一、单选题（每题1分，共60分）', multiple:'二、多选题（每题2分，共10题）', judge:'三、判断题（每题1分，共20题）'};
-    const typeStartNums = {single:1, multiple:1, judge:1};
-    
-    QUESTIONS.forEach((q, idx) => {
-        if (q.type !== lastType) {
-            html += '<div class="section-title">' + typeNames[q.type] + '</div>';
-            lastType = q.type;
-        }
-        html += '<div class="question-card" id="q' + idx + '">';
-        html += '<div class="q-text"><span class="q-num">' + q.num + '.</span>' + escapeHtml(q.question) + '</div>';
-        
-        if (q.type === 'multiple') {
-            html += '<div style="font-size:12px;color:#999;margin-bottom:8px;">（多选题，少选、错选不得分）</div>';
-        }
-        
-        const optKeys = q.type === 'judge' ? ['A','B'] : ['A','B','C','D'];
-        optKeys.forEach(key => {
-            const val = q.type === 'judge' ? (key==='A'?'正确':'错误') : (q.options[key] || '');
-            if (!val && q.type !== 'judge') return;
-            html += '<div class="option" data-idx="'+idx+'" data-key="'+key+'" onclick="selectOption('+idx+',\''+key+'\')">';
-            html += '<span class="opt-letter">'+key+'</span>' + escapeHtml(val);
-            html += '</div>';
-        });
-        
-        html += '<div class="answer-info" id="ans'+idx+'">正确答案：' + q.answer + '</div>';
-        html += '</div>';
+function renderAll(){
+  let h='',last='';
+  const tn={single:'一、单选题（每题1分，共60分）',multiple:'二、多选题（每题2分，共10题）',judge:'三、判断题（每题1分，共20题）'};
+  Q.forEach((q,i)=>{
+    if(q.type!==last){h+='<div class="section-title">'+tn[q.type]+'</div>';last=q.type;}
+    h+='<div class="q-card" id="qc'+i+'">';
+    h+='<div class="q-head"><span class="qnum">'+q.num+'.</span>'+esc(q.question);
+    if(q.type==='multiple')h+='<span class="q-type-tag">多选</span>';
+    h+='</div>';
+    const keys=q.type==='judge'?['A','B']:['A','B','C','D'];
+    keys.forEach(k=>{
+      const v=q.type==='judge'?(k==='A'?'正确':'错误'):(q.options[k]||'');
+      if(!v&&q.type!=='judge')return;
+      h+='<div class="opt" id="o'+i+'_'+k+'" data-i="'+i+'" data-k="'+k+'" onclick="tapOpt('+i+',''+k+'')">';
+      h+='<span class="letter">'+k+'</span>'+esc(v)+'</div>';
     });
-    container.innerHTML = html;
+    h+='<div class="feedback" id="fb'+i+'"></div>';
+    if(q.type==='multiple')h+='<div class="confirm-row" id="cr'+i+'"><button class="confirm-btn" onclick="confirmMulti('+i+')">确认答案</button></div>';
+    h+='</div>';
+  });
+  document.getElementById('qContainer').innerHTML=h;
 }
 
-function renderNav() {
-    const grid = document.getElementById('navGrid');
-    let html = '';
-    QUESTIONS.forEach((q, idx) => {
-        html += '<button class="nav-btn" id="nav'+idx+'" onclick="scrollToQ('+idx+')">'+q.num+'</button>';
-    });
-    grid.innerHTML = html;
+function tapOpt(i,k){
+  if(submitted||confirmed[i])return;
+  const q=Q[i];
+  if(q.type==='multiple'){
+    if(!UA[i])UA[i]=[];
+    const p=UA[i].indexOf(k);
+    if(p>=0)UA[i].splice(p,1);else UA[i].push(k);
+    UA[i].sort();
+  }else{
+    UA[i]=k;
+    showFeedback(i);
+  }
+  updateOptUI(i);
+  updateStats();
 }
 
-function selectOption(idx, key) {
-    if (submitted) return;
-    const q = QUESTIONS[idx];
-    if (q.type === 'multiple') {
-        if (!userAnswers[idx]) userAnswers[idx] = [];
-        const pos = userAnswers[idx].indexOf(key);
-        if (pos >= 0) userAnswers[idx].splice(pos, 1);
-        else userAnswers[idx].push(key);
-        userAnswers[idx].sort();
-    } else {
-        userAnswers[idx] = key;
+function confirmMulti(i){
+  if(!UA[i]||UA[i].length<2){
+    alert('多选题至少选择2个选项');return;
+  }
+  showFeedback(i);
+  document.getElementById('cr'+i).classList.remove('show');
+}
+
+function showFeedback(i){
+  confirmed[i]=true;
+  const q=Q[i];
+  let ua=UA[i];
+  let ok=false;
+  let correctAns=q.answer;
+
+  if(q.type==='multiple'){
+    const a=(ua||[]).sort().join('');
+    ok=a===q.answer;
+  }else if(q.type==='judge'){
+    const am={'正确':'A','错误':'B'};  // 正确:A 错误:B
+    ok=ua===am[q.answer];
+    correctAns=q.answer;
+  }else{
+    ok=ua===q.answer;
+  }
+
+  if(ok)correctCnt++;else wrongCnt++;
+
+  // Update option styles
+  const keys=q.type==='judge'?['A','B']:['A','B','C','D'];
+  keys.forEach(k=>{
+    const el=document.getElementById('o'+i+'_'+k);
+    if(!el)return;
+    el.classList.remove('sel');
+    if(q.type==='judge'){
+      const ansK=q.answer==='正确'?'A':'B';
+      if(k===ansK)el.classList.add('ok');
+      else if(ua===k)el.classList.add('err');
+      else el.classList.add('dim');
+    }else if(q.type==='multiple'){
+      const cks=q.answer.split('');
+      if(cks.includes(k))el.classList.add('ok');
+      else if(ua&&ua.includes(k))el.classList.add('err');
+      else el.classList.add('dim');
+    }else{
+      if(k===q.answer)el.classList.add('ok');
+      else if(ua===k)el.classList.add('err');
+      else el.classList.add('dim');
     }
-    updateOptionUI(idx);
-    updateStats();
+  });
+
+  // Show feedback text
+  const fb=document.getElementById('fb'+i);
+  if(ok){
+    fb.className='feedback show fb-ok';
+    fb.innerHTML='✅ 回答正确！';  // ✅ 回答正确！
+  }else{
+    fb.className='feedback show fb-err';
+    if(q.type==='judge')fb.innerHTML='❌ 回答错误，正确答案：'+correctAns;  // ❌ 回答错误，正确答案：
+    else fb.innerHTML='❌ 回答错误，正确答案：'+correctAns;
+  }
+
+  updateStats();
 }
 
-function updateOptionUI(idx) {
-    const q = QUESTIONS[idx];
-    const opts = document.querySelectorAll('.option[data-idx="'+idx+'"]');
-    opts.forEach(opt => {
-        opt.classList.remove('selected','correct','wrong');
-        const key = opt.dataset.key;
-        if (q.type === 'multiple') {
-            if (userAnswers[idx] && userAnswers[idx].includes(key)) opt.classList.add('selected');
-        } else {
-            if (userAnswers[idx] === key) opt.classList.add('selected');
-        }
-    });
-    const navBtn = document.getElementById('nav'+idx);
-    if (navBtn) {
-        navBtn.classList.toggle('answered', userAnswers[idx] !== undefined && 
-            (q.type==='multiple' ? userAnswers[idx].length > 0 : true));
+function updateOptUI(i){
+  const q=Q[i];
+  const keys=q.type==='judge'?['A','B']:['A','B','C','D'];
+  keys.forEach(k=>{
+    const el=document.getElementById('o'+i+'_'+k);
+    if(!el)return;
+    el.classList.remove('sel','ok','err','dim');
+    if(q.type==='multiple'){
+      if(UA[i]&&UA[i].includes(k))el.classList.add('sel');
+    }else{
+      if(UA[i]===k)el.classList.add('sel');
     }
+  });
+  // Show confirm button for multiple choice
+  if(q.type==='multiple'&&UA[i]&&UA[i].length>=1&&!confirmed[i]){
+    document.getElementById('cr'+i).classList.add('show');
+  }
 }
 
-function updateStats() {
-    let answered = 0;
-    QUESTIONS.forEach((q, idx) => {
-        if (q.type === 'multiple') {
-            if (userAnswers[idx] && userAnswers[idx].length > 0) answered++;
-        } else {
-            if (userAnswers[idx]) answered++;
-        }
-    });
-    document.getElementById('answeredNum').textContent = answered;
+function updateStats(){
+  let answered=0;
+  Q.forEach((q,i)=>{
+    if(confirmed[i])answered++;
+  });
+  document.getElementById('answeredN').textContent=answered;
+  document.getElementById('correctN').textContent=correctCnt;
+  document.getElementById('wrongN').textContent=wrongCnt;
+  const pct=(answered/Q.length*100).toFixed(0);
+  document.getElementById('progressFill').style.width=pct+'%';
 }
 
-function submitExam() {
-    submitted = true;
-    if (timerInterval) clearInterval(timerInterval);
-    let totalScore = 0, correctCount = 0;
-    
-    QUESTIONS.forEach((q, idx) => {
-        let ua = userAnswers[idx];
-        let isCorrect = false;
-        if (q.type === 'multiple') {
-            const ans = (ua || []).sort().join('');
-            isCorrect = ans === q.answer;
-        } else if (q.type === 'judge') {
-            const ansMap = {'正确':'A','错误':'B'};
-            isCorrect = ua === ansMap[q.answer];
-        } else {
-            isCorrect = ua === q.answer;
-        }
-        
-        if (isCorrect) {
-            totalScore += SCORE_MAP[q.type];
-            correctCount++;
-        }
-        
-        // Show result on options
-        const opts = document.querySelectorAll('.option[data-idx="'+idx+'"]');
-        opts.forEach(opt => {
-            opt.classList.remove('selected');
-            const key = opt.dataset.key;
-            if (q.type === 'judge') {
-                const ansKey = q.answer === '正确' ? 'A' : 'B';
-                if (key === ansKey) opt.classList.add('correct');
-                else if (ua === key) opt.classList.add('wrong');
-            } else if (q.type === 'multiple') {
-                const correctKeys = q.answer.split('');
-                if (correctKeys.includes(key)) opt.classList.add('correct');
-                else if (ua && ua.includes(key)) opt.classList.add('wrong');
-            } else {
-                if (key === q.answer) opt.classList.add('correct');
-                else if (ua === key) opt.classList.add('wrong');
-            }
-        });
-        
-        const navBtn = document.getElementById('nav'+idx);
-        if (navBtn) {
-            navBtn.classList.remove('answered');
-            navBtn.classList.add(isCorrect ? 'correct' : 'wrong');
-        }
-        
-        document.getElementById('ans'+idx).classList.add('show');
-    });
-    
-    document.getElementById('correctNum').textContent = correctCount;
-    
-    const result = document.getElementById('result');
-    const scoreDisplay = document.getElementById('scoreDisplay');
-    const scoreDetail = document.getElementById('scoreDetail');
-    const passStatus = document.getElementById('passStatus');
-    
-    scoreDisplay.textContent = totalScore + '分';
-    scoreDisplay.className = 'score ' + (totalScore >= 60 ? 'pass' : 'fail');
-    scoreDetail.textContent = '答对 ' + correctCount + '/' + QUESTIONS.length + ' 题，得分 ' + totalScore + '/100';
-    passStatus.textContent = totalScore >= 60 ? '✅ 恭喜通过！' : '❌ 未通过，请继续加油！';
-    result.classList.add('show');
-    result.scrollIntoView({behavior:'smooth'});
+function submitExam(){
+  if(submitted)return;
+  submitted=true;
+  if(ti)clearInterval(ti);
+  
+  // Auto-confirm unanswered
+  Q.forEach((q,i)=>{
+    if(!confirmed[i]){
+      if(q.type==='multiple'&&UA[i]&&UA[i].length>=2)showFeedback(i);
+      else if(q.type!=='multiple'&&UA[i])showFeedback(i);
+    }
+  });
+  
+  // Calculate score
+  let ts=0,cc=0;
+  let sCorrect=0,mCorrect=0,jCorrect=0;
+  Q.forEach((q,i)=>{
+    let ua=UA[i],ok=false;
+    if(q.type==='multiple'){ok=(ua||[]).sort().join('')===q.answer;if(ok){mCorrect++;ts+=2;}}
+    else if(q.type==='judge'){ok=ua===(q.answer==='正确'?'A':'B');if(ok){jCorrect++;ts+=1;}}
+    else{ok=ua===q.answer;if(ok){sCorrect++;ts+=1;}}
+    if(ok)cc++;
+  });
+  
+  const rc=document.getElementById('resultCard');
+  const bs=document.getElementById('bigScore');
+  bs.textContent=ts+'分';  // 分
+  bs.className='big-score '+(ts>=60?'pass':'fail');
+  document.getElementById('rDetail').textContent='答对 '+cc+'/'+Q.length+' 题';  // 答对 x/n 题
+  document.getElementById('rBreakdown').textContent='单选'+sCorrect+'/60 博选'+mCorrect+'/10 判断'+jCorrect+'/20';  // 单选x/60 多选x/10 判断x/20
+  const tag=document.getElementById('rTag');
+  if(ts>=60){tag.className='pass-tag yes';tag.textContent='✅ 恭喜通过！';}  // ✅ 恭喜通过！
+  else{tag.className='pass-tag no';tag.textContent='❌ 未通过，继续加油！';}  // ❌ 未通过，继续加油！
+  rc.classList.add('show');
+  rc.scrollIntoView({behavior:'smooth'});
+  
+  document.getElementById('submitBtn').disabled=true;
 }
 
-function showAllAnswers() {
-    QUESTIONS.forEach((q, idx) => {
-        document.getElementById('ans'+idx).classList.add('show');
-        const opts = document.querySelectorAll('.option[data-idx="'+idx+'"]');
-        opts.forEach(opt => {
-            const key = opt.dataset.key;
-            if (q.type === 'judge') {
-                if (key === (q.answer === '正确' ? 'A' : 'B')) opt.classList.add('correct');
-            } else if (q.type === 'multiple') {
-                if (q.answer.includes(key)) opt.classList.add('correct');
-            } else {
-                if (key === q.answer) opt.classList.add('correct');
-            }
-        });
-    });
+function resetExam(){
+  UA={};confirmed={};submitted=false;
+  correctCnt=0;wrongCnt=0;sec=90*60;
+  document.getElementById('resultCard').classList.remove('show');
+  document.getElementById('submitBtn').disabled=false;
+  renderAll();updateStats();startTimer();
+  window.scrollTo(0,0);
 }
 
-function resetExam() {
-    userAnswers = {};
-    submitted = false;
-    timerSeconds = 90 * 60;
-    document.getElementById('result').classList.remove('show');
-    document.getElementById('correctNum').textContent = '-';
-    QUESTIONS.forEach((q, idx) => {
-        document.getElementById('ans'+idx).classList.remove('show');
-        const navBtn = document.getElementById('nav'+idx);
-        if (navBtn) navBtn.className = 'nav-btn';
-    });
-    renderQuestions();
-    updateStats();
-    startTimer();
-    window.scrollTo(0, 0);
+function startTimer(){
+  if(ti)clearInterval(ti);
+  ti=setInterval(()=>{
+    sec--;
+    if(sec<=0){clearInterval(ti);submitExam();return;}
+    const m=Math.floor(sec/60),s=sec%60;
+    document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  },1000);
 }
 
-function startTimer() {
-    if (timerInterval) clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-        timerSeconds--;
-        if (timerSeconds <= 0) {
-            clearInterval(timerInterval);
-            submitExam();
-            return;
-        }
-        const min = Math.floor(timerSeconds / 60);
-        const sec = timerSeconds % 60;
-        document.getElementById('timer').textContent = 
-            String(min).padStart(2,'0') + ':' + String(sec).padStart(2,'0');
-    }, 1000);
-}
-
-function scrollToQ(idx) {
-    const el = document.getElementById('q'+idx);
-    if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
+function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
 
 init();
 </script>

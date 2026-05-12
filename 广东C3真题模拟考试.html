@@ -62,6 +62,15 @@
             .answer-sheet { display: none; }
             .timer { top: 10px; right: 10px; padding: 5px 10px; font-size: 14px; }
         }
+    
+        /* 即时反馈样式 */
+        .option.correct { background-color: #d4edda !important; border-color: #28a745 !important; }
+        .option.wrong { background-color: #f8d7da !important; border-color: #dc3545 !important; }
+        .option.show-correct { background-color: #d4edda !important; border-color: #28a745 !important; }
+        .feedback-correct { color: #155724; background: #d4edda; padding: 8px; border-radius: 5px; margin-top: 10px; }
+        .feedback-wrong { color: #721c24; background: #f8d7da; padding: 8px; border-radius: 5px; margin-top: 10px; }
+        .feedback-area { margin-top: 10px; font-size: 14px; }
+    
     </style>
 </head>
 <body>
@@ -204,6 +213,7 @@
                 userAnswers[num] = opt;
             }
             
+            showFeedback(num);
             updateUI();
         }
         
@@ -305,6 +315,91 @@
         // Initialize
         renderQuestions();
         startTimer();
+    
+        
+        // 即时反馈函数
+        function showFeedback(num) {
+            if (!exams[currentExam]) return;
+            var questions = exams[currentExam].questions;
+            if (!questions[num]) return;
+            
+            var correctAnswer = questions[num].answer;
+            var userAnswer = userAnswers[num] || '';
+            var feedbackDiv = document.getElementById('feedback-' + num);
+            if (!feedbackDiv) return;
+            
+            // 清空之前的反馈
+            feedbackDiv.innerHTML = '';
+            feedbackDiv.className = 'feedback-area';
+            
+            // 移除所有选项的高亮
+            var options = document.querySelectorAll('.option');
+            options.forEach(function(opt) {
+                opt.classList.remove('correct', 'wrong', 'show-correct');
+            });
+            
+            // 判断答案类型（单选/多选/判断）
+            var isCorrect = false;
+            if (userAnswer === correctAnswer) {
+                isCorrect = true;
+            }
+            
+            // 高亮显示
+            if (isCorrect) {
+                // 答对了：高亮正确答案
+                var correctOpt = document.querySelector('[onclick*="selectOption(' + num + ', \'' + correctAnswer + '\'"]');
+                if (correctOpt) correctOpt.classList.add('correct');
+                feedbackDiv.innerHTML = '<div class="feedback-correct">✓ 回答正确！</div>';
+            } else {
+                // 答错了：高亮错误答案（红色）和正确答案（绿色）
+                var wrongOpt = document.querySelector('[onclick*="selectOption(' + num + ', \'' + userAnswer + '\'"]');
+                if (wrongOpt) wrongOpt.classList.add('wrong');
+                
+                // 高亮正确答案
+                document.querySelectorAll('.option').forEach(function(opt) {
+                    var onclick = opt.getAttribute('onclick') || '';
+                    if (onclick.includes("selectOption(" + num + ", '" + correctAnswer + "'")) {
+                        opt.classList.add('show-correct');
+                    }
+                });
+                
+                feedbackDiv.innerHTML = '<div class="feedback-wrong">✗ 回答错误！正确答案：' + correctAnswer + '</div>';
+            }
+            
+            // 更新答题卡
+            updateAnswerSheet();
+        }
+        
+        // 更新答题卡颜色
+        function updateAnswerSheet() {
+            if (!exams[currentExam]) return;
+            var questions = exams[currentExam].questions;
+            for (var i = 0; i < questions.length; i++) {
+                var cell = document.getElementById('answer-cell-' + i);
+                if (!cell) continue;
+                
+                var userAnswer = userAnswers[i];
+                var correctAnswer = questions[i].answer;
+                
+                // 重置颜色
+                cell.style.backgroundColor = '';
+                cell.style.color = '';
+                
+                if (userAnswer) {
+                    if (userAnswer === correctAnswer) {
+                        cell.style.backgroundColor = '#d4edda';
+                        cell.style.color = '#155724';
+                    } else {
+                        cell.style.backgroundColor = '#f8d7da';
+                        cell.style.color = '#721c24';
+                    }
+                } else {
+                    cell.style.backgroundColor = '#fff';
+                    cell.style.color = '#333';
+                }
+            }
+        }
+    
     </script>
 </body>
 </html>

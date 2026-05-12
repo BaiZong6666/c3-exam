@@ -1,0 +1,1106 @@
+{
+  "试卷1": {
+    "single": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "B"
+      },
+      {
+        "num": 3,
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "answer": "D"
+      },
+      {
+        "num": 5,
+        "answer": "B"
+      },
+      {
+        "num": 6,
+        "answer": "C"
+      },
+      {
+        "num": 7,
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "answer": "A"
+      },
+      {
+        "num": 11,
+        "answer": "C"
+      },
+      {
+        "num": 12,
+        "answer": "B"
+      },
+      {
+        "num": 13,
+        "answer": "B"
+      },
+      {
+        "num": 14,
+        "answer": "B"
+      },
+      {
+        "num": 15,
+        "answer": "A"
+      },
+      {
+        "num": 16,
+        "answer": "B"
+      },
+      {
+        "num": 17,
+        "answer": "B"
+      },
+      {
+        "num": 18,
+        "answer": "B"
+      },
+      {
+        "num": 19,
+        "answer": "D"
+      },
+      {
+        "num": 20,
+        "answer": "D"
+      },
+      {
+        "num": 21,
+        "answer": "A"
+      },
+      {
+        "num": 22,
+        "answer": "B"
+      },
+      {
+        "num": 23,
+        "answer": "A"
+      },
+      {
+        "num": 24,
+        "answer": "C"
+      },
+      {
+        "num": 25,
+        "answer": "B"
+      },
+      {
+        "num": 26,
+        "answer": "B"
+      },
+      {
+        "num": 27,
+        "answer": "B"
+      },
+      {
+        "num": 28,
+        "answer": "A"
+      },
+      {
+        "num": 29,
+        "answer": "A"
+      },
+      {
+        "num": 30,
+        "answer": "D"
+      },
+      {
+        "num": 31,
+        "answer": "C"
+      },
+      {
+        "num": 32,
+        "answer": "B"
+      },
+      {
+        "num": 33,
+        "answer": "B"
+      },
+      {
+        "num": 34,
+        "answer": "A"
+      },
+      {
+        "num": 35,
+        "answer": "A"
+      },
+      {
+        "num": 36,
+        "answer": "B"
+      },
+      {
+        "num": 37,
+        "answer": "A"
+      },
+      {
+        "num": 38,
+        "answer": "A"
+      },
+      {
+        "num": 39,
+        "answer": "C"
+      },
+      {
+        "num": 40,
+        "answer": "A"
+      },
+      {
+        "num": 41,
+        "answer": "B"
+      },
+      {
+        "num": 42,
+        "answer": "C"
+      },
+      {
+        "num": 43,
+        "answer": "A"
+      },
+      {
+        "num": 44,
+        "answer": "A"
+      },
+      {
+        "num": 45,
+        "answer": "B"
+      },
+      {
+        "num": 46,
+        "answer": "B"
+      },
+      {
+        "num": 47,
+        "answer": "B"
+      },
+      {
+        "num": 48,
+        "answer": "C"
+      },
+      {
+        "num": 49,
+        "answer": "B"
+      },
+      {
+        "num": 50,
+        "answer": "A"
+      },
+      {
+        "num": 51,
+        "answer": "B"
+      },
+      {
+        "num": 52,
+        "answer": "A"
+      },
+      {
+        "num": 53,
+        "answer": "B"
+      },
+      {
+        "num": 54,
+        "answer": "A"
+      },
+      {
+        "num": 55,
+        "answer": "B"
+      },
+      {
+        "num": 56,
+        "answer": "A"
+      },
+      {
+        "num": 57,
+        "answer": "D"
+      },
+      {
+        "num": 58,
+        "answer": "A"
+      },
+      {
+        "num": 59,
+        "answer": "C"
+      },
+      {
+        "num": 60,
+        "answer": "B"
+      }
+    ],
+    "multiple": [
+      {
+        "num": 1,
+        "answer": "ABCD"
+      },
+      {
+        "num": 2,
+        "answer": "ABCD"
+      },
+      {
+        "num": 3,
+        "answer": "ABC"
+      },
+      {
+        "num": 4,
+        "answer": "ABC"
+      },
+      {
+        "num": 5,
+        "answer": "ABC"
+      },
+      {
+        "num": 6,
+        "answer": "ABCD"
+      },
+      {
+        "num": 7,
+        "answer": "ABCD"
+      },
+      {
+        "num": 8,
+        "answer": "ABCD"
+      },
+      {
+        "num": 9,
+        "answer": "ABC"
+      },
+      {
+        "num": 10,
+        "answer": "ABCD"
+      }
+    ],
+    "judge": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "B"
+      },
+      {
+        "num": 3,
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "answer": "B"
+      },
+      {
+        "num": 5,
+        "answer": "B"
+      },
+      {
+        "num": 6,
+        "answer": "B"
+      },
+      {
+        "num": 7,
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "answer": "B"
+      },
+      {
+        "num": 9,
+        "answer": "B"
+      },
+      {
+        "num": 10,
+        "answer": "A"
+      },
+      {
+        "num": 11,
+        "answer": "B"
+      },
+      {
+        "num": 12,
+        "answer": "B"
+      },
+      {
+        "num": 13,
+        "answer": "A"
+      },
+      {
+        "num": 14,
+        "answer": "A"
+      },
+      {
+        "num": 15,
+        "answer": "A"
+      },
+      {
+        "num": 16,
+        "answer": "A"
+      },
+      {
+        "num": 17,
+        "answer": "B"
+      },
+      {
+        "num": 18,
+        "answer": "A"
+      },
+      {
+        "num": 19,
+        "answer": "A"
+      },
+      {
+        "num": 20,
+        "answer": "A"
+      }
+    ]
+  },
+  "试卷2": {
+    "single": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "answer": "B"
+      },
+      {
+        "num": 4,
+        "answer": "B"
+      },
+      {
+        "num": 5,
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "answer": "B"
+      },
+      {
+        "num": 10,
+        "answer": "D"
+      },
+      {
+        "num": 11,
+        "answer": "B"
+      },
+      {
+        "num": 12,
+        "answer": "A"
+      },
+      {
+        "num": 13,
+        "answer": "A"
+      },
+      {
+        "num": 14,
+        "answer": "A"
+      },
+      {
+        "num": 15,
+        "answer": "A"
+      },
+      {
+        "num": 16,
+        "answer": "A"
+      },
+      {
+        "num": 17,
+        "answer": "A"
+      },
+      {
+        "num": 18,
+        "answer": "A"
+      },
+      {
+        "num": 19,
+        "answer": "A"
+      },
+      {
+        "num": 20,
+        "answer": "A"
+      },
+      {
+        "num": 21,
+        "answer": "A"
+      },
+      {
+        "num": 22,
+        "answer": "A"
+      },
+      {
+        "num": 23,
+        "answer": "A"
+      },
+      {
+        "num": 24,
+        "answer": "A"
+      },
+      {
+        "num": 25,
+        "answer": "B"
+      },
+      {
+        "num": 26,
+        "answer": "A"
+      },
+      {
+        "num": 27,
+        "answer": "C"
+      },
+      {
+        "num": 28,
+        "answer": "B"
+      },
+      {
+        "num": 29,
+        "answer": "B"
+      },
+      {
+        "num": 30,
+        "answer": "A"
+      },
+      {
+        "num": 31,
+        "answer": "B"
+      },
+      {
+        "num": 32,
+        "answer": "C"
+      },
+      {
+        "num": 33,
+        "answer": "A"
+      },
+      {
+        "num": 34,
+        "answer": "A"
+      },
+      {
+        "num": 35,
+        "answer": "A"
+      },
+      {
+        "num": 36,
+        "answer": "A"
+      },
+      {
+        "num": 37,
+        "answer": "A"
+      },
+      {
+        "num": 38,
+        "answer": "A"
+      },
+      {
+        "num": 39,
+        "answer": "A"
+      },
+      {
+        "num": 40,
+        "answer": "A"
+      },
+      {
+        "num": 41,
+        "answer": "A"
+      },
+      {
+        "num": 42,
+        "answer": "A"
+      },
+      {
+        "num": 43,
+        "answer": "A"
+      },
+      {
+        "num": 44,
+        "answer": "A"
+      },
+      {
+        "num": 45,
+        "answer": "A"
+      },
+      {
+        "num": 46,
+        "answer": "A"
+      },
+      {
+        "num": 47,
+        "answer": "A"
+      },
+      {
+        "num": 48,
+        "answer": "A"
+      },
+      {
+        "num": 49,
+        "answer": "A"
+      },
+      {
+        "num": 50,
+        "answer": "A"
+      },
+      {
+        "num": 51,
+        "answer": "A"
+      },
+      {
+        "num": 52,
+        "answer": "A"
+      },
+      {
+        "num": 53,
+        "answer": "D"
+      },
+      {
+        "num": 54,
+        "answer": "A"
+      },
+      {
+        "num": 55,
+        "answer": "B"
+      },
+      {
+        "num": 56,
+        "answer": "A"
+      },
+      {
+        "num": 57,
+        "answer": "A"
+      },
+      {
+        "num": 58,
+        "answer": "A"
+      },
+      {
+        "num": 59,
+        "answer": "A"
+      },
+      {
+        "num": 60,
+        "answer": "A"
+      }
+    ],
+    "multiple": [
+      {
+        "num": 1,
+        "answer": "ABC"
+      },
+      {
+        "num": 2,
+        "answer": "ABC"
+      },
+      {
+        "num": 3,
+        "answer": "ABC"
+      },
+      {
+        "num": 4,
+        "answer": "ABCD"
+      },
+      {
+        "num": 5,
+        "answer": "ABC"
+      },
+      {
+        "num": 6,
+        "answer": "ABCD"
+      },
+      {
+        "num": 7,
+        "answer": "ABCD"
+      },
+      {
+        "num": 8,
+        "answer": "ABCD"
+      },
+      {
+        "num": 9,
+        "answer": "ABCD"
+      },
+      {
+        "num": 10,
+        "answer": "ABCD"
+      }
+    ],
+    "judge": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "B"
+      },
+      {
+        "num": 3,
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "answer": "B"
+      },
+      {
+        "num": 5,
+        "answer": "B"
+      },
+      {
+        "num": 6,
+        "answer": "B"
+      },
+      {
+        "num": 7,
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "answer": "B"
+      },
+      {
+        "num": 9,
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "answer": "A"
+      },
+      {
+        "num": 11,
+        "answer": "A"
+      },
+      {
+        "num": 12,
+        "answer": "B"
+      },
+      {
+        "num": 13,
+        "answer": "A"
+      },
+      {
+        "num": 14,
+        "answer": "B"
+      },
+      {
+        "num": 15,
+        "answer": "A"
+      },
+      {
+        "num": 16,
+        "answer": "A"
+      },
+      {
+        "num": 17,
+        "answer": "A"
+      },
+      {
+        "num": 18,
+        "answer": "B"
+      },
+      {
+        "num": 19,
+        "answer": "B"
+      },
+      {
+        "num": 20,
+        "answer": "A"
+      }
+    ]
+  },
+  "试卷3": {
+    "single": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "answer": "C"
+      },
+      {
+        "num": 6,
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "answer": "B"
+      },
+      {
+        "num": 9,
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "answer": "A"
+      },
+      {
+        "num": 11,
+        "answer": "A"
+      },
+      {
+        "num": 12,
+        "answer": "A"
+      },
+      {
+        "num": 13,
+        "answer": "A"
+      },
+      {
+        "num": 14,
+        "answer": "A"
+      },
+      {
+        "num": 15,
+        "answer": "B"
+      },
+      {
+        "num": 16,
+        "answer": "A"
+      },
+      {
+        "num": 17,
+        "answer": "A"
+      },
+      {
+        "num": 18,
+        "answer": "A"
+      },
+      {
+        "num": 19,
+        "answer": "A"
+      },
+      {
+        "num": 20,
+        "answer": "C"
+      },
+      {
+        "num": 21,
+        "answer": "A"
+      },
+      {
+        "num": 22,
+        "answer": "B"
+      },
+      {
+        "num": 23,
+        "answer": "A"
+      },
+      {
+        "num": 24,
+        "answer": "A"
+      },
+      {
+        "num": 25,
+        "answer": "A"
+      },
+      {
+        "num": 26,
+        "answer": "B"
+      },
+      {
+        "num": 27,
+        "answer": "A"
+      },
+      {
+        "num": 28,
+        "answer": "A"
+      },
+      {
+        "num": 29,
+        "answer": "B"
+      },
+      {
+        "num": 30,
+        "answer": "A"
+      },
+      {
+        "num": 31,
+        "answer": "A"
+      },
+      {
+        "num": 32,
+        "answer": "A"
+      },
+      {
+        "num": 33,
+        "answer": "A"
+      },
+      {
+        "num": 34,
+        "answer": "B"
+      },
+      {
+        "num": 35,
+        "answer": "A"
+      },
+      {
+        "num": 36,
+        "answer": "A"
+      },
+      {
+        "num": 37,
+        "answer": "A"
+      },
+      {
+        "num": 38,
+        "answer": "A"
+      },
+      {
+        "num": 39,
+        "answer": "A"
+      },
+      {
+        "num": 40,
+        "answer": "A"
+      },
+      {
+        "num": 41,
+        "answer": "A"
+      },
+      {
+        "num": 42,
+        "answer": "A"
+      },
+      {
+        "num": 43,
+        "answer": "A"
+      },
+      {
+        "num": 44,
+        "answer": "A"
+      },
+      {
+        "num": 45,
+        "answer": "A"
+      },
+      {
+        "num": 46,
+        "answer": "A"
+      },
+      {
+        "num": 47,
+        "answer": "A"
+      },
+      {
+        "num": 48,
+        "answer": "A"
+      },
+      {
+        "num": 49,
+        "answer": "A"
+      },
+      {
+        "num": 50,
+        "answer": "A"
+      },
+      {
+        "num": 51,
+        "answer": "A"
+      },
+      {
+        "num": 52,
+        "answer": "B"
+      },
+      {
+        "num": 53,
+        "answer": "A"
+      },
+      {
+        "num": 54,
+        "answer": "A"
+      },
+      {
+        "num": 55,
+        "answer": "A"
+      },
+      {
+        "num": 56,
+        "answer": "A"
+      },
+      {
+        "num": 57,
+        "answer": "A"
+      },
+      {
+        "num": 58,
+        "answer": "A"
+      },
+      {
+        "num": 59,
+        "answer": "A"
+      },
+      {
+        "num": 60,
+        "answer": "A"
+      }
+    ],
+    "multiple": [
+      {
+        "num": 1,
+        "answer": "ABC"
+      },
+      {
+        "num": 2,
+        "answer": "ABC"
+      },
+      {
+        "num": 3,
+        "answer": "ABC"
+      },
+      {
+        "num": 4,
+        "answer": "ABCD"
+      },
+      {
+        "num": 5,
+        "answer": "ABCD"
+      },
+      {
+        "num": 6,
+        "answer": "ABCD"
+      },
+      {
+        "num": 7,
+        "answer": "ABCD"
+      },
+      {
+        "num": 8,
+        "answer": "AB"
+      },
+      {
+        "num": 9,
+        "answer": "ABCD"
+      },
+      {
+        "num": 10,
+        "answer": "ABC"
+      }
+    ],
+    "judge": [
+      {
+        "num": 1,
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "answer": "B"
+      },
+      {
+        "num": 3,
+        "answer": "B"
+      },
+      {
+        "num": 4,
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "answer": "B"
+      },
+      {
+        "num": 6,
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "answer": "B"
+      },
+      {
+        "num": 8,
+        "answer": "B"
+      },
+      {
+        "num": 9,
+        "answer": "B"
+      },
+      {
+        "num": 10,
+        "answer": "A"
+      },
+      {
+        "num": 11,
+        "answer": "A"
+      },
+      {
+        "num": 12,
+        "answer": "A"
+      },
+      {
+        "num": 13,
+        "answer": "A"
+      },
+      {
+        "num": 14,
+        "answer": "B"
+      },
+      {
+        "num": 15,
+        "answer": "A"
+      },
+      {
+        "num": 16,
+        "answer": "A"
+      },
+      {
+        "num": 17,
+        "answer": "A"
+      },
+      {
+        "num": 18,
+        "answer": "A"
+      },
+      {
+        "num": 19,
+        "answer": "A"
+      },
+      {
+        "num": 20,
+        "answer": "A"
+      }
+    ]
+  }
+}

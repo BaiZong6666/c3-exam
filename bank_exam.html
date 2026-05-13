@@ -190,8 +190,7 @@ function updateUI(i){
   var q=Q[i];
   var keys=Object.keys(q.options);
   keys.forEach(function(k){
-    var el=document.getElementById('o'+i+'_'+k);
-    if(!el)return;el.className='opt';
+    var el=document.getElementById('o'+i+'_'+k);if(!el)return;el.className='opt';
     if(q.type==='multiple'){if(userAnswers[i]&&userAnswers[i].indexOf(k)>=0)el.classList.add('selected');}
     else{if(userAnswers[i]===k)el.classList.add('selected');}
   });
@@ -199,6 +198,39 @@ function updateUI(i){
   var card=document.getElementById('qc'+i);
   if(a&&((Array.isArray(a)&&a.length>0)||(!Array.isArray(a)&&a)))card.classList.add('answered');
   else card.classList.remove('answered');
+
+  // Immediate feedback per question
+  var fb=document.getElementById('fb'+i);
+  if(fb){
+    var showFeed=false;
+    var correct=false;
+    if((q.type==='single'||q.type==='judge')&&a){
+      showFeed=true; correct=(a===q.answer);
+      keys.forEach(function(k){
+        var el=document.getElementById('o'+i+'_'+k);if(!el)return;
+        if(k===q.answer)el.classList.add('correct-answer');
+        if(a===k&&k!==q.answer)el.classList.add('wrong-answer');
+      });
+    } else if(q.type==='multiple'&&a&&a.length>=2){
+      showFeed=true;
+      var uArr=a.slice().sort().join(''), cArr=q.answer.split('').sort().join('');
+      correct=(uArr===cArr);
+      keys.forEach(function(k){
+        var el=document.getElementById('o'+i+'_'+k);if(!el)return;
+        if(q.answer.indexOf(k)>=0)el.classList.add('correct-answer');
+        if(a.indexOf(k)>=0&&q.answer.indexOf(k)<0)el.classList.add('wrong-answer');
+        if(!a.includes(k)&&q.answer.indexOf(k)>=0)el.classList.add('missed-answer');
+      });
+    }
+    if(showFeed){
+      var pts=q.type==='multiple'?2:1;
+      fb.textContent=correct?'\u2714 正确 (+'+pts+'分)':'\u2718 错误 正确答案: '+q.answer;
+      fb.className='feedback show '+(correct?'correct':'wrong');
+      if(correct)card.classList.add('correct');else card.classList.add('wrong');
+      var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell '+(correct?'correct':'wrong');
+    }
+  }
+
   updateCounts();
 }
 

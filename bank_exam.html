@@ -7,45 +7,55 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#333;line-height:1.6}
-.header{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;padding:20px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.header{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;padding:16px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
 .header h1{font-size:20px;margin-bottom:4px}
 .header .sub{font-size:13px;opacity:.85}
-.toolbar{display:flex;gap:10px;padding:12px 16px;background:#fff;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;align-items:center}
+.timer{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;position:absolute;right:20px;top:16px}
+.toolbar{display:flex;gap:10px;padding:10px 16px;background:#fff;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;align-items:center}
 .toolbar .stat{font-size:13px;color:#666;background:#f5f5f5;padding:4px 10px;border-radius:12px}
 .toolbar .stat b{color:#1a73e8}
+.toolbar .score-live{font-size:14px;color:#555;background:#e8f5e9;padding:5px 14px;border-radius:12px;font-weight:600;border:1px solid #a5d6a7}
+.toolbar .score-live b{color:#2e7d32}
 .btn{padding:8px 20px;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;transition:all .2s}
 .btn-primary{background:#1a73e8;color:#fff}.btn-primary:hover{background:#1557b0}
-.btn-success{background:#34a853;color:#fff}.btn-success:hover{background:#2d8e47}
+.btn-success{background:#34a853;color:#fff}.btn-success:hover{background:#2d8e47}.btn-success:disabled{background:#ccc;cursor:not-allowed}
 .btn-warning{background:#fbbc04;color:#333}.btn-warning:hover{background:#f0a800}
 .btn-danger{background:#ea4335;color:#fff}.btn-danger:hover{background:#c5221f}
-.filter-bar{display:flex;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid #eee;flex-wrap:wrap}
-.filter-btn{padding:6px 16px;border:1px solid #ddd;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;transition:all .2s}
-.filter-btn.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
-.timer{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff}
-.progress-bar{height:4px;background:rgba(255,255,255,.3);margin-top:8px;border-radius:2px}
-.progress-fill{height:100%;background:#4caf50;border-radius:2px;transition:width .3s}
-.q-card{background:#fff;margin:12px 16px;border-radius:10px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid transparent;transition:all .2s}
-.q-card.single{border-left-color:#1a73e8}.q-card.multiple{border-left-color:#fbbc04}.q-card.judge{border-left-color:#34a853}
-.q-card.answered{border-left-color:#ccc;background:#fafafa}
+.section-header{background:#fff;margin:12px 16px;border-radius:10px;padding:14px 18px;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:14px;line-height:1.8}
+.section-header .sh-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.section-header .sh-title.s1{color:#1a73e8}.section-header .sh-title.s2{color:#f57f17}.section-header .sh-title.s3{color:#2e7d32}
+.q-card{background:#fff;margin:8px 16px;border-radius:10px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid transparent}
+.q-card.single{border-left-color:#1a73e8}.q-card.multiple{border-left-color:#f57f17}.q-card.judge{border-left-color:#2e7d32}
+.q-card.answered{background:#fafafa}
 .q-card.correct{border-left-color:#34a853 !important}.q-card.wrong{border-left-color:#ea4335 !important}
 .q-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
 .q-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
-.single .q-num{background:#1a73e8}.multiple .q-num{background:#fbbc04}.judge .q-num{background:#34a853}
-.q-text{font-size:15px;line-height:1.7;flex:1}.q-text img{max-width:100%;border-radius:6px;margin:8px 0}
+.single .q-num{background:#1a73e8}.multiple .q-num{background:#f57f17}.judge .q-num{background:#2e7d32}
+.q-text{font-size:15px;line-height:1.7;flex:1}
 .opts{display:flex;flex-direction:column;gap:6px}
 .opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border:2px solid #e8eaed;border-radius:8px;cursor:pointer;transition:all .2s;font-size:14px}
 .opt:hover{border-color:#1a73e8;background:#e8f0fe}
 .opt.selected{border-color:#1a73e8;background:#d2e3fc}
 .opt.correct-answer{border-color:#34a853 !important;background:#e6f4ea !important}
 .opt.wrong-answer{border-color:#ea4335 !important;background:#fce8e6 !important}
-.opt.missed-answer{border-color:#fbbc04 !important;background:#fef7e0 !important}
+.opt.missed-answer{border-color:#f57f17 !important;background:#fef7e0 !important}
+.opt.locked{cursor:default;pointer-events:none}
 .letter{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#f0f2f5;font-weight:700;font-size:13px;flex-shrink:0}
 .opt.selected .letter{background:#1a73e8;color:#fff}
-.feedback{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:13px;display:none}
+.feedback{margin-top:10px;padding:10px 14px;border-radius:6px;font-size:14px;display:none}
 .feedback.show{display:block}
-.feedback.correct{background:#e6f4ea;color:#1b5e20}.feedback.wrong{background:#fce8e6;color:#b71c1c}
+.feedback.correct{background:#e8f5e9;color:#1b5e20;border-left:4px solid #34a853}
+.feedback.wrong{background:#fce8e6;color:#b71c1c;border-left:4px solid #ea4335}
+.feedback .pts{font-weight:700}
+.confirm-area{margin-top:10px;display:none}
+.confirm-area.show{display:flex;gap:8px;align-items:center}
+.next-btn{margin-top:10px;display:none}
+.next-btn.show{display:block;width:100%}
+.next-btn button{width:100%}
+.progress-bar{height:4px;background:rgba(255,255,255,.3);margin-top:8px;border-radius:2px;width:100%}
+.progress-fill{height:100%;background:#4caf50;border-radius:2px;transition:width .3s}
 .answer-card{position:fixed;right:0;top:60px;bottom:0;width:50px;background:#fff;box-shadow:-2px 0 10px rgba(0,0,0,.1);overflow-y:auto;z-index:50;display:none;padding:8px 4px}
-.answer-card.show{display:block}.answer-card-toggle{position:fixed;right:50px;top:70px;z-index:51;cursor:pointer;font-size:20px}
+.answer-card.show{display:block}.answer-card-toggle{position:fixed;right:50px;top:70px;z-index:51;cursor:pointer;font-size:20px;background:#fff;padding:6px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 .ac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
 .ac-cell{width:100%;aspect-ratio:1;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;cursor:pointer;border:1px solid #ddd;transition:all .15s}
 .ac-cell.current{background:#1a73e8;color:#fff;border-color:#1a73e8}
@@ -54,14 +64,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .ac-cell.wrong{background:#fce8e6;border-color:#ea4335;color:#ea4335}
 .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center}
 .modal-overlay.show{display:flex}
-.modal{background:#fff;border-radius:16px;padding:32px;max-width:400px;width:90%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.2)}
-.modal h2{margin-bottom:16px;font-size:22px}.modal .score{font-size:64px;font-weight:800;margin:16px 0}
+.modal{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:90%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+.modal h2{margin-bottom:16px;font-size:22px}
+.modal .score{font-size:72px;font-weight:800;margin:16px 0}
 .modal .score.pass{color:#34a853}.modal .score.fail{color:#ea4335}
-.modal .breakdown{font-size:14px;color:#666;margin:12px 0}.modal .tag{font-size:18px;font-weight:700;margin:8px 0}
+.modal .breakdown{font-size:14px;color:#666;margin:12px 0}
+.modal .tag{font-size:20px;font-weight:700;margin:8px 0}
 .modal .tag.pass{color:#34a853}.modal .tag.fail{color:#ea4335}
 .modal .btns{display:flex;gap:10px;justify-content:center;margin-top:20px}
-.search-box{flex:1;min-width:200px;padding:8px 14px;border:1px solid #ddd;border-radius:8px;font-size:14px;outline:none}.search-box:focus{border-color:#1a73e8}
-@media(max-width:600px){.q-card{margin:8px;padding:12px}.answer-card{width:40px}.ac-grid{grid-template-columns:repeat(3,1fr)}}
+.modal .detail{text-align:left;margin:16px auto;max-width:320px;font-size:13px;color:#555}
+.modal .detail div{padding:4px 0}
+@media(max-width:600px){.q-card{margin:8px;padding:12px}.section-header{margin:8px}.answer-card{width:40px}.ac-grid{grid-template-columns:repeat(3,1fr)}.header{padding:12px}.timer{position:static;margin-top:4px}}
 </style>
 </head>
 <body>
@@ -69,18 +82,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 <div class="header">
   <h1 id="titleEl">广东C3题库·随机模拟考试</h1>
   <div class="sub" id="subEl">每次刷新/重新出题，随机抽60单选+10多选+20判断</div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
   
   <div class="timer" id="timerEl">90:00</div><div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
 </div>
 
 <div class="toolbar" id="toolbar">
-  <span class="stat">单选: <b id="sCnt">0</b></span>
-  <span class="stat">多选: <b id="mCnt">0</b></span>
-  <span class="stat">判断: <b id="jCnt">0</b></span>
-  <span class="stat">已答: <b id="answeredCount">0</b>/<b id="totalCnt">0</b></span>
+  <span class="stat">单选 <b id="sDone">0</b>/<b id="sTotal">60</b></span>
+  <span class="stat">多选 <b id="mDone">0</b>/<b id="mTotal">10</b></span>
+  <span class="stat">判断 <b id="jDone">0</b>/<b id="jTotal">20</b></span>
+  <span class="score-live">当前得分: <b id="liveScore">0</b> / 100</span>
   <button class="btn btn-primary" onclick="toggleCard()">答题卡</button><button class="btn btn-success" onclick="submitExam()">交卷</button>
 </div>
-
 
 <button class="btn btn-primary" onclick="newExam()">重新出题</button>
 
@@ -93,13 +106,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 
 <div class="modal-overlay" id="resultModal">
   <div class="modal">
-    <h2>考试结果</h2>
+    <h2>考试完成</h2>
     <div class="score" id="rScore">0</div>
     <div class="breakdown" id="rBreakdown"></div>
+    <div class="detail" id="rDetail"></div>
     <div class="tag" id="rTag"></div>
     <div class="btns">
       <button class="btn btn-danger" onclick="reviewErrors()">查看错题</button>
-      <button class="btn btn-primary" onclick="newExam()">再考一次</button>
+      <button class="btn btn-primary" onclick="newExam()">重新开始</button>
     </div>
   </div>
 </div>
@@ -111,6 +125,7 @@ var userAnswers={};
 var submitted=false;
 var timerInterval=null;
 var timeLeft=5400;
+var currentScore=0;
 
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
 
@@ -120,36 +135,57 @@ function newExam(){
   var singles=ALL_Q.filter(function(q){return q.type==='single'});
   var multiples=ALL_Q.filter(function(q){return q.type==='multiple'});
   var judges=ALL_Q.filter(function(q){return q.type==='judge'});
-  var picked=[];
-  pickRandom(singles,Math.min(60,singles.length)).forEach(function(q,i){picked.push({type:'single',num:picked.length+1,question:q.question,options:q.options,answer:q.answer})});
-  pickRandom(multiples,Math.min(10,multiples.length)).forEach(function(q,i){picked.push({type:'multiple',num:picked.length+1,question:q.question,options:q.options,answer:q.answer})});
-  pickRandom(judges,Math.min(20,judges.length)).forEach(function(q,i){picked.push({type:'judge',num:picked.length+1,question:q.question,options:q.options,answer:q.answer})});
-  // Shuffle all
-  for(var i=picked.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=picked[i];picked[i]=picked[j];picked[j]=t;}
-  // Re-number
-  picked.forEach(function(q,i){q.num=i+1});
-  Q=picked;
-  userAnswers={};submitted=false;
+
+  Q=[];
+  // Single choice - keep order
+  pickRandom(singles,Math.min(60,singles.length)).forEach(function(q){Q.push({type:'single',num:Q.length+1,question:q.question,options:q.options,answer:q.answer});});
+  // Multiple choice - keep order
+  pickRandom(multiples,Math.min(10,multiples.length)).forEach(function(q){Q.push({type:'multiple',num:Q.length+1,question:q.question,options:q.options,answer:q.answer});});
+  // Judge - keep order
+  pickRandom(judges,Math.min(20,judges.length)).forEach(function(q){Q.push({type:'judge',num:Q.length+1,question:q.question,options:q.options,answer:q.answer});});
+
+  userAnswers={};submitted=false;currentScore=0;
   document.getElementById('qContainer').innerHTML='';
   if(timerInterval)clearInterval(timerInterval);
   timeLeft=5400;
   document.getElementById('timerEl').textContent='90:00';
   document.getElementById('progressFill').style.width='0%';
   document.getElementById('resultModal').classList.remove('show');
-  initUI();
+  document.getElementById('liveScore').textContent='0';
+  buildAnswerCard();
+  buildExamHTML();
   startTimer();
 }
 
-function initUI(){
+function buildExamHTML(){
   var c=document.getElementById('qContainer');
+  var sCount=0,mCount=0,jCount=0;
+  Q.forEach(function(q){if(q.type==='single')sCount++;if(q.type==='multiple')mCount++;if(q.type==='judge')jCount++;});
+  document.getElementById('sTotal').textContent=sCount;
+  document.getElementById('mTotal').textContent=mCount;
+  document.getElementById('jTotal').textContent=jCount;
+
   var h='';
-  var sCnt=0,mCnt=0,jCnt=0;
+  var sIdx=0,mIdx=0,jIdx=0;
   Q.forEach(function(q,i){
-    if(q.type==='single')sCnt++;
-    if(q.type==='multiple')mCnt++;
-    if(q.type==='judge')jCnt++;
-    var tc=q.type;
-    h+='<div class="q-card '+tc+'" id="qc'+i+'" data-type="'+q.type+'">';
+    if(q.type==='single')sIdx++;
+    if(q.type==='multiple')mIdx++;
+    if(q.type==='judge')jIdx++;
+  });
+
+  // Section 1: Single choice header
+  h+='<div class="section-header"><div class="sh-title s1">一、单选题（共 '+sCount+' 题，每题 1 分，共 '+sCount+' 分）</div></div>';
+  // Section 2: Multiple choice header
+  h+='<div class="section-header"><div class="sh-title s2">二、多选题（共 '+mCount+' 题，每题 2 分，共 '+(mCount*2)+' 分，多选、少选、错选不得分）</div></div>';
+  // Section 3: Judge header
+  h+='<div class="section-header"><div class="sh-title s3">三、判断题（共 '+jCount+' 题，每题 1 分，共 '+jCount+' 分）</div></div>';
+
+  Q.forEach(function(q,i){
+    var sectionLabel='';
+    if(q.type==='single')sectionLabel='单选';
+    if(q.type==='multiple')sectionLabel='多选';
+    if(q.type==='judge')sectionLabel='判断';
+    h+='<div class="q-card '+q.type+'" id="qc'+i+'">';
     h+='<div class="q-head"><span class="q-num">'+q.num+'</span><span class="q-text">'+esc(q.question)+'</span></div>';
     h+='<div class="opts">';
     var keys=Object.keys(q.options);
@@ -159,15 +195,21 @@ function initUI(){
       h+='<span class="letter">'+k+'</span><span>'+esc(v)+'</span></div>';
     });
     h+='</div>';
-    h+='<div class="feedback" id="fb'+i+'"></div></div>';
+    // Feedback area
+    h+='<div class="feedback" id="fb'+i+'"></div>';
+    // Confirm button for multiple choice
+    h+='<div class="confirm-area" id="ca'+i+'">';
+    h+='<button class="btn btn-success" id="cb'+i+'" onclick="confirmMulti('+i+')">确认答案</button>';
+    h+='<span style="font-size:12px;color:#888;margin-left:8px">已选 <b id="cc'+i+'">0</b> 项</span>';
+    h+='</div>';
+    // Next question button
+    h+='<div class="next-btn" id="nb'+i+'"><button class="btn btn-primary" onclick="goNext('+i+')">下一题 \u2192</button></div>';
+    h+='</div>';
   });
+
   c.innerHTML=h;
   c.addEventListener('click',handleClick);
-  document.getElementById('sCnt').textContent=sCnt;
-  document.getElementById('mCnt').textContent=mCnt;
-  document.getElementById('jCnt').textContent=jCnt;
-  document.getElementById('totalCnt').textContent=Q.length;
-  updateCounts();
+  updateSectionCounts();
   buildAnswerCard();
 }
 
@@ -182,68 +224,144 @@ function handleClick(e){
     if(!userAnswers[i])userAnswers[i]=[];
     var idx=userAnswers[i].indexOf(k);
     if(idx>=0)userAnswers[i].splice(idx,1);else userAnswers[i].push(k);
-  }else{userAnswers[i]=k;}
-  updateUI(i);
+    // Update selected count
+    var cc=document.getElementById('cc'+i);
+    if(cc)cc.textContent=userAnswers[i].length;
+    // Show confirm area if at least 1 selected
+    var ca=document.getElementById('ca'+i);
+    if(userAnswers[i].length>0){ca.classList.add('show');}else{ca.classList.remove('show');}
+    // Update option highlight
+    Object.keys(q.options).forEach(function(k2){
+      var el=document.getElementById('o'+i+'_'+k2);
+      if(!el)return;
+      el.classList.remove('selected','correct-answer','wrong-answer','missed-answer');
+      if(userAnswers[i]&&userAnswers[i].indexOf(k2)>=0)el.classList.add('selected');
+    });
+    updateSectionCounts();
+  }else{
+    // Single / Judge - immediate feedback
+    userAnswers[i]=k;
+    showFeedbackSingle(i);
+    updateSectionCounts();
+    // Show next button for single/judge too
+    var nb=document.getElementById('nb'+i);
+    if(nb)nb.classList.add('show');
+    // Lock options
+    Object.keys(q.options).forEach(function(k2){
+      var el=document.getElementById('o'+i+'_'+k2);if(el)el.classList.add('locked');
+    });
+    checkExamDone();
+  }
 }
 
-function updateUI(i){
+function showFeedbackSingle(i){
   var q=Q[i];
+  var a=userAnswers[i];
+  var correct=(a===q.answer);
   var keys=Object.keys(q.options);
   keys.forEach(function(k){
-    var el=document.getElementById('o'+i+'_'+k);if(!el)return;el.className='opt';
-    if(q.type==='multiple'){if(userAnswers[i]&&userAnswers[i].indexOf(k)>=0)el.classList.add('selected');}
-    else{if(userAnswers[i]===k)el.classList.add('selected');}
+    var el=document.getElementById('o'+i+'_'+k);if(!el)return;
+    el.classList.remove('selected','correct-answer','wrong-answer');
+    if(k===q.answer)el.classList.add('correct-answer');
+    if(a===k&&k!==q.answer)el.classList.add('wrong-answer');
+    if(a===k)el.classList.add('selected');
   });
-  var a=userAnswers[i];
-  var card=document.getElementById('qc'+i);
-  if(a&&((Array.isArray(a)&&a.length>0)||(!Array.isArray(a)&&a)))card.classList.add('answered');
-  else card.classList.remove('answered');
-
-  // Immediate feedback per question
   var fb=document.getElementById('fb'+i);
-  if(fb){
-    var showFeed=false;
-    var correct=false;
-    if((q.type==='single'||q.type==='judge')&&a){
-      showFeed=true; correct=(a===q.answer);
-      keys.forEach(function(k){
-        var el=document.getElementById('o'+i+'_'+k);if(!el)return;
-        if(k===q.answer)el.classList.add('correct-answer');
-        if(a===k&&k!==q.answer)el.classList.add('wrong-answer');
-      });
-    } else if(q.type==='multiple'&&a&&a.length>=2){
-      showFeed=true;
-      var uArr=a.slice().sort().join(''), cArr=q.answer.split('').sort().join('');
-      correct=(uArr===cArr);
-      keys.forEach(function(k){
-        var el=document.getElementById('o'+i+'_'+k);if(!el)return;
-        if(q.answer.indexOf(k)>=0)el.classList.add('correct-answer');
-        if(a.indexOf(k)>=0&&q.answer.indexOf(k)<0)el.classList.add('wrong-answer');
-        if(!a.includes(k)&&q.answer.indexOf(k)>=0)el.classList.add('missed-answer');
-      });
-    }
-    if(showFeed){
-      var pts=q.type==='multiple'?2:1;
-      fb.textContent=correct?'\u2714 正确 (+'+pts+'分)':'\u2718 错误 正确答案: '+q.answer;
-      fb.className='feedback show '+(correct?'correct':'wrong');
-      if(correct)card.classList.add('correct');else card.classList.add('wrong');
-      var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell '+(correct?'correct':'wrong');
-    }
+  var card=document.getElementById('qc'+i);
+  if(correct){
+    currentScore+=1;
+    fb.innerHTML='<span class="pts">\u2714 回答正确！ +1分</span>';
+    fb.className='feedback show correct';
+    card.classList.add('correct');
+    var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell correct';
+  }else{
+    fb.innerHTML='<span class="pts">\u2718 回答错误！</span> 正确答案：'+q.answer;
+    fb.className='feedback show wrong';
+    card.classList.add('wrong');
+    var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell wrong';
   }
-
-  updateCounts();
+  document.getElementById('liveScore').textContent=currentScore;
+  var ca=document.getElementById('ca'+i);if(ca)ca.classList.remove('show');
 }
 
-function updateCounts(){
-  var count=0;
-  Q.forEach(function(q,i){var a=userAnswers[i];if(a&&((Array.isArray(a)&&a.length>0)||(!Array.isArray(a)&&a)))count++;});
-  document.getElementById('answeredCount').textContent=count;
-  document.getElementById('progressFill').style.width=(count/Q.length*100)+'%';
+function confirmMulti(i){
+  if(submitted)return;
+  var q=Q[i];
+  var a=userAnswers[i];
+  if(!a||a.length===0)return;
+  userAnswers[i].confirmed=true;
+  var correct=false;
+  var uArr=a.slice().sort().join(''),cArr=q.answer.split('').sort().join('');
+  correct=(uArr===cArr);
+  var keys=Object.keys(q.options);
+  keys.forEach(function(k){
+    var el=document.getElementById('o'+i+'_'+k);if(!el)return;
+    el.classList.add('locked');
+    if(q.answer.indexOf(k)>=0)el.classList.add('correct-answer');
+    if(a.indexOf(k)>=0&&q.answer.indexOf(k)<0)el.classList.add('wrong-answer');
+    if(!a.includes(k)&&q.answer.indexOf(k)>=0)el.classList.add('missed-answer');
+  });
+  var fb=document.getElementById('fb'+i);
+  var card=document.getElementById('qc'+i);
+  var pts=correct?2:0;
+  if(correct){
+    currentScore+=2;
+    fb.innerHTML='<span class="pts">\u2714 回答正确！ +2分</span>';
+    fb.className='feedback show correct';
+    card.classList.add('correct');
+    var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell correct';
+  }else{
+    var missing=[];
+    q.answer.split('').forEach(function(k){if(a.indexOf(k)<0)missing.push(k);});
+    var wrongSel=[];
+    a.forEach(function(k){if(q.answer.indexOf(k)<0)wrongSel.push(k);});
+    var extraInfo='';
+    if(missing.length>0)extraInfo+=' 漏选: '+missing.join('');
+    if(wrongSel.length>0)extraInfo+=' 错选: '+wrongSel.join('');
+    fb.innerHTML='<span class="pts">\u2718 回答错误！</span> 正确答案：'+q.answer+extraInfo;
+    fb.className='feedback show wrong';
+    card.classList.add('wrong');
+    var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell wrong';
+  }
+  document.getElementById('liveScore').textContent=currentScore;
+  var ca=document.getElementById('ca'+i);if(ca){ca.style.display='none';}
+  var nb=document.getElementById('nb'+i);if(nb)nb.classList.add('show');
+  updateSectionCounts();
+  checkExamDone();
+}
+
+function goNext(i){
+  var nextId=i+1;
+  if(nextId<Q.length){
+    var el=document.getElementById('qc'+nextId);
+    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function updateSectionCounts(){
+  var sD=0,mD=0,jD=0;
+  Q.forEach(function(q,i){
+    var a=userAnswers[i];
+    if(a&&((Array.isArray(a)&&a.length>0)||(!Array.isArray(a)&&a))){
+      if(q.type==='single')sD++;
+      if(q.type==='multiple')mD++;
+      if(q.type==='judge')jD++;
+    }
+  });
+  document.getElementById('sDone').textContent=sD;
+  document.getElementById('mDone').textContent=mD;
+  document.getElementById('jDone').textContent=jD;
+  var total=sD+mD+jD;
+  document.getElementById('progressFill').style.width=(total/Q.length*100)+'%';
 }
 
 function buildAnswerCard(){
   var g=document.getElementById('acGrid');if(!g)return;
-  var h='';Q.forEach(function(q,i){h+='<div class="ac-cell" id="ac'+i+'" onclick="scrollToQ('+i+')">'+(i+1)+'</div>';});
+  var h='';
+  Q.forEach(function(q,i){
+    var label=q.type==='single'?'\u5355':q.type==='multiple'?'\u591a':'\u5224';
+    h+='<div class="ac-cell" id="ac'+i+'" onclick="scrollToQ('+i+')">'+q.num+'<br><span style="font-size:8px">'+label+'</span></div>';
+  });
   g.innerHTML=h;
 }
 function scrollToQ(i){var el=document.getElementById('qc'+i);if(el)el.scrollIntoView({behavior:'smooth',block:'center'});}
@@ -258,54 +376,40 @@ function startTimer(){
   },1000);
 }
 
+function checkExamDone(){
+  var total=0;
+  Q.forEach(function(q,i){var a=userAnswers[i];if(a&&((Array.isArray(a)&&a.length>0)||(!Array.isArray(a)&&a)))total++;});
+  if(total>=Q.length){setTimeout(submitExam,500);}
+}
+
 function submitExam(){
-  if(submitted)return;clearInterval(timerInterval);submitted=true;
-  var sC=0,mC=0,jC=0,sT=0,mT=0,jT=0,errors=[];
+  if(submitted)return;
+  clearInterval(timerInterval);submitted=true;
+  var sC=0,mC=0,jC=0,sT=0,mT=0,jT=0;
   Q.forEach(function(q,i){
-    var card=document.getElementById('qc'+i),fb=document.getElementById('fb'+i),ua=userAnswers[i],correct=false;
-    var keys=Object.keys(q.options);
-    if(q.type==='single'){sT++;if(ua===q.answer){sC++;correct=true}else{errors.push(i);}}
-    if(q.type==='multiple'){mT++;var uArr=(ua&&Array.isArray(ua))?ua.slice().sort().join(''):'',cArr=q.answer.split('').sort().join('');if(uArr===cArr){mC++;correct=true}else{errors.push(i);}}
-    if(q.type==='judge'){jT++;if(ua===q.answer){jC++;correct=true}else{errors.push(i);}}
-    keys.forEach(function(k){
-      var el=document.getElementById('o'+i+'_'+k);if(!el)return;el.style.cursor='default';
-      if(k===q.answer)el.classList.add('correct-answer');
-      if(ua===k&&k!==q.answer)el.classList.add('wrong-answer');
-      if(q.type==='multiple'&&q.answer.indexOf(k)>=0&&(!ua||ua.indexOf(k)<0))el.classList.add('missed-answer');
-    });
-    if(correct)card.classList.add('correct');else card.classList.add('wrong');
-    var pts=q.type==='multiple'?2:1;
-    fb.textContent=correct?'\u2714 正确 (+'+pts+'分)':'\u2718 错误 正确答案: '+q.answer;
-    fb.className='feedback show '+(correct?'correct':'wrong');
-    var ac=document.getElementById('ac'+i);if(ac)ac.className='ac-cell '+(correct?'correct':'wrong');
+    if(q.type==='single')sT++;
+    if(q.type==='multiple')mT++;
+    if(q.type==='judge')jT++;
+    var a=userAnswers[i];
+    if(!a)return;
+    if(q.type==='single'){if(a===q.answer)sC++;}
+    if(q.type==='multiple'){
+      var uArr=(Array.isArray(a)?a:[]).sort().join(''),cArr=q.answer.split('').sort().join('');
+      if(uArr===cArr)mC++;
+    }
+    if(q.type==='judge'){if(a===q.answer)jC++;}
   });
-  var total=sC*1+mC*2+jC*1;
+  var total=currentScore;
   var rScore=document.getElementById('rScore');rScore.textContent=total;rScore.className='score '+(total>=60?'pass':'fail');
   document.getElementById('rBreakdown').textContent='单选 '+sC+'/'+sT+'  多选 '+mC+'/'+mT+'  判断 '+jC+'/'+jT;
+  var detail=document.getElementById('rDetail');
+  detail.innerHTML='<div>\u5355\u9009\u9898 \u5f97\u5206\uff1a'+sC+'/'+sT+' (\u6bcf\u98981\u5206\uff0c\u5171'+sT+'\u5206)</div><div>\u591a\u9009\u9898 \u5f97\u5206\uff1a'+mC+'/'+mT+' (\u6bcf\u98982\u5206\uff0c\u5171'+(mT*2)+'\u5206)</div><div>\u5224\u65ad\u9898 \u5f97\u5206\uff1a'+jC+'/'+jT+' (\u6bcf\u98981\u5206\uff0c\u5171'+jT+'\u5206)</div>';
   var tag=document.getElementById('rTag');
-  if(total>=60){tag.className='tag pass';tag.textContent='\u2705 恭喜通过！'}else{tag.className='tag fail';tag.textContent='\u274c 未通过，加油！'}
+  if(total>=60){tag.className='tag pass';tag.textContent='\u2705 '+total+'\u5206 \u901a\u8fc7\u8003\u8bd5\uff01';}else{tag.className='tag fail';tag.textContent='\u274c '+total+'\u5206 \u672a\u901a\u8fc7\uff0c\u52a0\u6ce5\u5fd8\u52b5\uff01';}
   document.getElementById('resultModal').classList.add('show');
 }
 
-function reviewErrors(){document.getElementById('resultModal').classList.remove('show');Q.forEach(function(q,i){var card=document.getElementById('qc'+i);card.style.display=card.classList.contains('wrong')?'block':'none';});window.scrollTo(0,0);}
-
-function setFilter(f,btn){
-  currentFilter=f;document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');doSearch();
-}
-var currentFilter='all';
-function doSearch(){
-  var kw=(document.getElementById('searchBox')?document.getElementById('searchBox').value.toLowerCase():'');
-  Q.forEach(function(q,i){
-    var card=document.getElementById('qc'+i),show=true;
-    if(currentFilter!=='all'&&q.type!==currentFilter)show=false;
-    if(kw&&q.question.toLowerCase().indexOf(kw)<0)show=false;
-    card.style.display=show?'':'none';
-  });
-}
-
-var showAns=false;
-function showAnswers(){showAns=true;Q.forEach(function(q,i){var fb=document.getElementById('fb'+i);fb.textContent='答案: '+q.answer;fb.className='feedback show correct';Object.keys(q.options).forEach(function(k){var el=document.getElementById('o'+i+'_'+k);if(el&&q.answer.indexOf(k)>=0)el.classList.add('correct-answer');});});}
-function hideAnswers(){showAns=false;Q.forEach(function(q,i){var fb=document.getElementById('fb'+i);fb.className='feedback';fb.textContent='';Object.keys(q.options).forEach(function(k){var el=document.getElementById('o'+i+'_'+k);if(el)el.className='opt';});updateUI(i);});}
+function reviewErrors(){document.getElementById('resultModal').classList.remove('show');Q.forEach(function(q,i){var card=document.getElementById('qc'+i);card.style.display=(card.classList.contains('wrong'))?'block':'none';});window.scrollTo(0,0);}
 
 newExam();
 </script>
